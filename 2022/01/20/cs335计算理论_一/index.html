@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>cs335计算理论(一) | RetenQ的博客</title><meta name="keywords" content="MIEC生存手册,cs335计算理论"><meta name="author" content="RetenQ"><meta name="copyright" content="RetenQ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="来自梅努斯国际工程学院的cs335计算理论,不建议阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cs335计算理论(一)">
+<meta property="og:url" content="http://example.com/2022/01/20/cs335%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA_%E4%B8%80/index.html">
+<meta property="og:site_name" content="RetenQ的博客">
+<meta property="og:description" content="来自梅努斯国际工程学院的cs335计算理论,不建议阅读">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png">
+<meta property="article:published_time" content="2022-01-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-20T10:34:04.784Z">
+<meta property="article:author" content="RetenQ">
+<meta property="article:tag" content="MIEC生存手册,cs335计算理论">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png"><link rel="shortcut icon" href="https://s2.loli.net/2022/01/12/FP23fqhJaZjYNLw.jpg"><link rel="canonical" href="http://example.com/2022/01/20/cs335%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA_%E4%B8%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'cs335计算理论(一)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-20 18:34:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s3.bmp.ovh/imgs/2022/01/8810259d94a68ce8.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">RetenQ的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">cs335计算理论(一)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-19T16:00:00.000Z" title="发表于 2022-01-20 00:00:00">2022-01-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-20T10:34:04.784Z" title="更新于 2022-01-20 18:34:04">2022-01-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">MIEC生存手册</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="cs335计算理论(一)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>真的痛苦<br>而且这部分内容对于大二的学生过于晦涩难懂了，而大三大四乃至研究生学生也不至于看这篇博客<br>所以这一篇文章更适合那些<br>同在MIEC受苦，且本质快速阅览的学生<br>如果要一步一步学，建议去观看油管或者B站计算理论的相关视频</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h1 id="CS335-lecture1"><a href="#CS335-lecture1" class="headerlink" title="CS335 lecture1"></a>CS335 lecture1</h1><h2 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h2><h4 id="Automata-and-Language-Theory"><a href="#Automata-and-Language-Theory" class="headerlink" title="Automata and Language Theory"></a>Automata and Language Theory</h4><h4 id="Computability-Theory"><a href="#Computability-Theory" class="headerlink" title="Computability Theory"></a>Computability Theory</h4><h4 id="Complexity-Theory"><a href="#Complexity-Theory" class="headerlink" title="Complexity Theory"></a>Complexity Theory</h4><h4 id="Book：-ntroduction-to-the-Theory-of-Computation-Sipser-3rd-Edition-US"><a href="#Book：-ntroduction-to-the-Theory-of-Computation-Sipser-3rd-Edition-US" class="headerlink" title="Book： ntroduction to the Theory of Computation,Sipser, 3rd Edition US"></a>Book： ntroduction to the Theory of Computation,Sipser, 3rd Edition US</h4><p>本课程是关于计算理论的，它试图回答以下问题<br>1.计算机硬件和软件的数学属性是什么？<br>2.什么是计算，什么是算法？我们能对这些概念给出严格的数学定义吗?<br>3.计算机的局限性是什么？“一切”都可以计算吗？（这个问题的答案是“不”）</p>
+<p>是否可解决<br>若可以，设计一个算法/模型来解决<br>选择的方法的复杂度（时间、内存等）怎样</p>
+<p><strong>AIM:</strong> 开发反映现实世界计算机的计算的正式数学模型</p>
+<h2 id="理论知识预备"><a href="#理论知识预备" class="headerlink" title="理论知识预备"></a>理论知识预备</h2><h4 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h4><blockquote>
+<p>Set是一个单位所代表的对象的集合</p>
+</blockquote>
+<p>1.集合中的对象 Object 被称为集合的元素<br>2.集合的元素被表现在括号中，不同的元素使用逗号隔开。 {1,a,b,c}<br>3.一个集合不能有出现重复的元素<br>4.集合中，元素的顺序并不重要<br>5.没有元素的集合被称为空集 ∅={}</p>
+<h5 id="基本概念与表示"><a href="#基本概念与表示" class="headerlink" title="基本概念与表示"></a>基本概念与表示</h5><p>𝑥∈𝐴 ：x是A的一个元素<br>𝑥 ∉𝐴 ：x不是A中的一个元素<br>𝐴⊆𝐵 ：A中的每个元素也是B的元素，也就是<strong>A是B的一个子集</strong><br>𝐴⊂𝐵 ：是B的子集，且B中存在A中不存在的元素<br>𝐴⊈𝐵 ：A不是B的子集</p>
+<p>几个比较重要的集合:<br>ℕ:自然数集，1,2,3…<br>ℤ：整数集，…,-2,-1,0,1,2…<br>ℚ:有理数集,{a/b: a,b∈Z,b!=0}<br>ℝ：实数集<br>ℂ：复数集</p>
+<p>它们之间的层级结构: <strong>ℕ⊆ℤ⊆ℚ⊆ℝ⊆ℂ</strong> </p>
+<h5 id="集合间的运算"><a href="#集合间的运算" class="headerlink" title="集合间的运算"></a>集合间的运算</h5><p>-Union:  𝐴∪𝐵={𝑥∶𝑥∈𝐴𝑜𝑟𝑥∈𝐵}<br>-Intersection:  𝐴∩𝐵={𝑥∶𝑥∈𝐴𝑎𝑛𝑑𝑥∈B}<br>-Complement:̅𝐴={𝑥∶𝑥∉𝐴}<br>-SetMinus:  𝐴\𝐵={𝑥∶𝑥∈𝐴 𝑎𝑛𝑑 𝑥∉𝐵}</p>
+<h5 id="Cartesian-Product-笛卡尔积"><a href="#Cartesian-Product-笛卡尔积" class="headerlink" title="Cartesian Product 笛卡尔积"></a>Cartesian Product 笛卡尔积</h5><p>AXB代表A、B两个集合的笛卡尔积，结果是来自A的元素a,和来自B的元素b的有序组合，比如</p>
+<p>A = {0，1}  B = {m,n}<br>AXB:{(0,m),(0,n),(1,m),(1,n)}</p>
+<p>𝐴×𝐵 ≠ 𝐵×𝐴</p>
+<blockquote>
+<p>笛卡尔积也叫做叉积。笛卡尔积产生的集合是“第一个元素为A的元素，第二个元素是B的元素”的所有有序对最初的集合<br>有序对：二元组</p>
+</blockquote>
+<h4 id="函数以及集合间的函数关系Function"><a href="#函数以及集合间的函数关系Function" class="headerlink" title="函数以及集合间的函数关系Function"></a>函数以及集合间的函数关系Function</h4><p>函数function也叫映射mapping，函数是一个建立输入-输出关系的对象，函数又叫映射，f(a) = b ,称f把a映射为b<br>1.可能输入的集合是“定义域”，可能得到输出的集合是“值域”。如果一个函数取得值域的所有元素，则称它<strong>映上onto</strong>到这个值域<br>2.k个自变量的函数被称为k元函数，k就是函数的<strong>元数 arity</strong><br>3.<strong>谓词predicate</strong>或<strong>性质property</strong>是一种函数，它的值域为{TURE,FALSE}<br>4.定义域为&amp;A^k&amp;的谓词称为<strong>关系relation</strong> 或 <strong>k元关系 k-ary relation</strong> ,也叫“A上的k元关系”<br>5.等价关系是一种特殊的二元关系，如果二元关系R满足<strong>自反的reflexive</strong> 、 <strong>对称的symmetric</strong>、<strong>传递的 transitive</strong>，则称他是一个等价关系</p>
+<blockquote>
+<p>自反，每一个x,xRx<br>对称，每一个x,xRy则意味着yRx<br>传递，对每一个x、y、z，如果xRy且yRz,那么有xRz</p>
+</blockquote>
+<p>一个由集合A到集合B的函数 <em><strong>f</strong></em> ，是一个AXB（A、B笛卡尔积）的子集</p>
+<p><strong>If 𝑎,𝑏∈𝑓 ,  𝑓(a)=𝑏.</strong> </p>
+<h4 id="Strings字符串"><a href="#Strings字符串" class="headerlink" title="Strings字符串"></a>Strings字符串</h4><h5 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h5><p>字母表Alphabet 是一个有限的非空集合，字母表的成员member就是字母表的标志symbols<br>一个来自alphabet的String（即“字母表上的字符串 string over an alphabet”）就是一个没有逗号，没有分隔符，没有空格的来自字母表的标志组成的序列。(Σ 代表一个字母表)<br>比如：<br>a string over Σ={0,1} is 010101001</p>
+<p>a string over Σ={𝐴,𝐵,𝐶,⋯,𝑍} is any word,e.g.,COMPUTATION</p>
+<h5 id="字符串的长度"><a href="#字符串的长度" class="headerlink" title="字符串的长度"></a>字符串的长度</h5><p>𝜀:empty string 空字符串<br>在代表字符串的字母两侧加上绝对值符号，则代表这个字符串的长度<br>比如，𝑤=010101001 ，|𝑤|=9<br>|𝜀|=0</p>
+<h5 id="Reverse-of-string-字符串转置"><a href="#Reverse-of-string-字符串转置" class="headerlink" title="Reverse of string 字符串转置"></a>Reverse of string 字符串转置</h5><p>在代表字符串的字母右上角写上R,代表该字符串的转置<br>W  = 111000<br>WR = 000111</p>
+<p>Wu代表这W和U两个字符串的连接，比如<br>w = aabba   u = bbb<br>Wu = aabbabbb<br>Wk(这里是W的k次方)代表着W与自己本身连接了k次，其中W的0次方为 ε </p>
+<h5 id="字符串的偏序-Partial-Order-on-Strings"><a href="#字符串的偏序-Partial-Order-on-Strings" class="headerlink" title="字符串的偏序 Partial Order on Strings"></a>字符串的偏序 Partial Order on Strings</h5><p>如果存在一个字符串z,使得y = xz ,那么我们则说x是字符串y的一个前缀prefix，而且𝑥⊆𝑦</p>
+<p>特别的，如果有𝑥⊂𝑦，那么则称x是y的真前缀proper prefix</p>
+<h4 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h4><p>若A是机器M接受的全部字符串集，则称A是机器M的语言，记作L(M) = A ，有称作M识别A或者M接受A</p>
+<blockquote>
+<p>一台机器可能接受若干个字符串，但是它永远只能识别一个语言。如果机器不接受任何字符串，那么它仍然识别一个语言，即空语言</p>
+</blockquote>
+<h5 id="语言的串联-Concatenation-of-Languages"><a href="#语言的串联-Concatenation-of-Languages" class="headerlink" title="语言的串联 Concatenation of Languages"></a>语言的串联 Concatenation of Languages</h5><p>我们假设A和B是两个字母表，则我们可以这样定义A·B 或者 A.B :</p>
+<p>𝐴.𝐵={𝑥𝑦:𝑥∈𝐴,𝑦∈𝐵}<br>次方在这里同样适用，比如:<br>A^0 = {𝜀}<br>A^k+1 = A.A^k</p>
+<p><em>克莱恩星 Kleene Star</em><br>我们定义A*代表A这个字母表大于等于0次的自由组合，可以类比一下正则表达式</p>
+<h6 id="运算与示例"><a href="#运算与示例" class="headerlink" title="运算与示例"></a>运算与示例</h6><p>1.对于只有一个字母的字母表，我们常用 a* 代替 {a}*<br>2.对于A+，它意味着A*\ {𝜀}</p>
+<p>我们假设A = {a,b}<br>$A^0$ = {𝜀}<br>$A^1$ = A<br>$A^2$ = {aa,ab,ba,bb}<br>$A^3$ = {aaa,aab,aba,baa,abb,bab,bba,bbb}<br>$A^*$ = {𝜀,a,b,aa,ab,ba,bb,…}<br>$A^+$ = {a,b,aa,ab,ba,bb,…}</p>
+<h6 id="语言-language"><a href="#语言-language" class="headerlink" title="语言 language"></a>语言 language</h6><blockquote>
+<p>实质上，任何由字母表Σ展开的语言，实际上都是Σ*的一个子集</p>
+</blockquote>
+<p>比如，Σ = {0,1},此时我们有一个语言A,A = {0,00,00,…} = 0 + ，此时A就是一个由Σ 展开的语言</p>
+<h2 id="有限状态机-Finite-Automata-有穷自动机"><a href="#有限状态机-Finite-Automata-有穷自动机" class="headerlink" title="有限状态机 Finite Automata (有穷自动机)"></a>有限状态机 Finite Automata (有穷自动机)</h2><blockquote>
+<p>有限状态机是一个内存有限的，良好的计算机模型，常用于一些控制器上(比如自动门)</p>
+</blockquote>
+<p>输入：有限的字符串<br>输出：接受或者拒绝<br>过程：从起始状态 start state 开始，读取输入的标志，遵循已经规定好的、对应的转换原则，最后做出选择：接受或拒绝</p>
+<h4 id="形式化定义Formal-Definition"><a href="#形式化定义Formal-Definition" class="headerlink" title="形式化定义Formal Definition"></a>形式化定义Formal Definition</h4><p>一个有限状态机可以分为五个元组<br>Q：有限的状态集【状态表】<br>Σ：有限的字母状态集合【字母表】<br>𝛿：转换  (“比如我们在状态x时读到了1，那么转移到y” 可以表示为“𝛿(x,1) = y”)【转移函数】<br>$q_0$:起始状态 【起始状态】<br>F：可接受状态的集合 【接受状态集】</p>
+<p>-A stringis a finite sequence of symbols in Σ<br>-A languageis a set of strings (finite or infinite)<br>-The empty stringεis the string of length 0<br>-The empty language ø is the set with no strings </p>
+<blockquote>
+<p>如果某种有限自动机能识别一种语言，那么这种语言就是正则的<br>A language is regularif some finite automaton recognizes it.</p>
+</blockquote>
+<h4 id="正则运算"><a href="#正则运算" class="headerlink" title="正则运算"></a>正则运算</h4><p>设A和B是两个语言，定义正则运算的<strong>并</strong>、<strong>连接</strong>、<strong>星号</strong> 如下<br><strong>1.并 Union</strong><br>𝐴∪𝐵= {𝑤| 𝑤∈𝐴 or 𝑤∈𝐵}</p>
+<p><strong>2.连接 Concatenation</strong><br>𝐴∘𝐵={𝑥𝑦 | 𝑥∈𝐴 and 𝑦∈𝐵} =𝐴𝐵</p>
+<p><strong>3.星 Star</strong><br>A* = {x1x2x3…xk | k&gt;= 0 , 且每一个xi∈A}  notes:ε∈A</p>
+<h6 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h6><p>A = {good,bad}  B = {boy,girl}</p>
+<p>𝐴∪𝐵 = {good,bad,boy,girl}<br>𝐴∘𝐵  = {goodboy,goodgirl,badboy,badgirl}<br>A* = {ε,good,bad,goodgood,goodbad,badgood,badbad,…}</p>
+<h3 id="正则语言"><a href="#正则语言" class="headerlink" title="正则语言"></a>正则语言</h3><blockquote>
+<p>如果一个语言被一台有穷自动机识别，则称它为正则语言 regular language</p>
+</blockquote>
+<h4 id="正则语言封闭性"><a href="#正则语言封闭性" class="headerlink" title="正则语言封闭性"></a>正则语言封闭性</h4><blockquote>
+<p>一般来说，如果把某种运算应用于一个对象集合的成员，得到的对象依然在这个集合中，那么称这个对象集合在该运算下封闭<br>正则语言的封闭性如下:</p>
+</blockquote>
+<p><strong>Theorem:</strong> 如果A1，A2是正则语言，那么 A1∪A2 也是</p>
+<p><strong>Theorem:</strong> 如果A1，A2是正则语言，那么 A1A2 也是</p>
+<p><strong>Theorem:</strong> 如果A1，A2是正则语言，那么 A1∘A2 也是</p>
+<p><strong>Theorem:</strong> 如果A是正则语言，那么 A* 也是</p>
+<h1 id="CS335-lecture2-3"><a href="#CS335-lecture2-3" class="headerlink" title="CS335 lecture2-3"></a>CS335 lecture2-3</h1><h2 id="非确定性有限状态机-NondeterministicFinite-Automata"><a href="#非确定性有限状态机-NondeterministicFinite-Automata" class="headerlink" title="非确定性有限状态机 NondeterministicFinite Automata"></a>非确定性有限状态机 NondeterministicFinite Automata</h2><h3 id="正则语言的闭包属性"><a href="#正则语言的闭包属性" class="headerlink" title="正则语言的闭包属性"></a>正则语言的闭包属性</h3><p>Thm：如果A1 A2 是正则语言，那么A1A2也是正则语言(closure under ∘)<br>当M接受x而M2接受y时，M才能接受输入。为了解决“M不知道在什么地方把他们分开”这个问题，我们引入了新的技术<br>那就是<strong>非确定性</strong></p>
+<h3 id="来自非确定性nondeterminism的新特性"><a href="#来自非确定性nondeterminism的新特性" class="headerlink" title="来自非确定性nondeterminism的新特性"></a>来自非确定性nondeterminism的新特性</h3><p>1.可能会有多个路径，每一次都可能有0，1，多条的情况(在任何一个点，下一个状态都有若干选择)<br>2.ε-transition(ε)代表着一个“自由” (free) 的输入，意思是可以不读取输入内容就可以进行到下一步<br>3.Accept input if Accept input ifsomesomepath leads to accept state accept<br>如果一个输入可以找到一个“到达accept的路径”，那么它就可以被接受</p>
+<h4 id="NFA形式化定义"><a href="#NFA形式化定义" class="headerlink" title="NFA形式化定义"></a>NFA形式化定义</h4><p>NFA的形式化定义和DFA类似：状态集，输入字母表，转移函数，起始状态，接受状态<br>关键在于,NFA的转移函数与DFA不同，这导致了它们本质上的不同。<br>另外，若NFA有k种状态，那么它就要$2^k$个状态子集</p>
+<p>我们可以从以下三个方面来认知非确定性：<br>1.计算机 Computational ： 把非确定性看作若干个独立的线程，若干个子线程中至少有一个被接受，那么整个计算就会被接受<br>2.数学 Mathematical:想象一个有许多枝干的树。如果任意一个枝干可以到达accept state ，那么我们就选择接受它<br>3.Magical:猜测每一个不确定的步骤。在有可能的情况下，机器慧选择出一条可以接受的道路(即可以到达 accept state的情况)</p>
+<h3 id="将NFAs转化为DFAs"><a href="#将NFAs转化为DFAs" class="headerlink" title="将NFAs转化为DFAs"></a>将NFAs转化为DFAs</h3><p>Thm：如果一个NFA 承认recognize A,那么A就是正则的</p>
+<blockquote>
+<p>Every nondeterministic finite automaton has an equivalent<br>如果两台机器识别同样的语言，则称它们是等价的</p>
+</blockquote>
+<p>每一台非确定型有穷自动机都等价于某一台确定型有穷状态机</p>
+<h3 id="正则语言的闭包性"><a href="#正则语言的闭包性" class="headerlink" title="正则语言的闭包性"></a>正则语言的闭包性</h3><p><strong>Theorem:</strong> 如果A1，A2是正则语言，那么 A1∪A2 也是</p>
+<blockquote>
+<p>正则语言在并运算下封闭</p>
+</blockquote>
+<p><strong>Theorem:</strong> 如果A1，A2是正则语言，那么 A1A2 也是</p>
+<p><strong>Theorem:</strong> 如果A1，A2是正则语言，那么 A1∘A2 也是</p>
+<blockquote>
+<p>正则语言在连接运算下封闭</p>
+</blockquote>
+<p><strong>Theorem:</strong> 如果A是正则语言，那么 A* 也是</p>
+<blockquote>
+<p>正则语言在星号运算下封闭</p>
+</blockquote>
+<p>相关证明详见书，写字太抽象了</p>
+<h3 id="Regular-Expressions-→NFA"><a href="#Regular-Expressions-→NFA" class="headerlink" title="Regular Expressions →NFA"></a>Regular Expressions →NFA</h3><p>Thm：如果过R是一个正则表达式，而且A = L(R) ，那么A就是正则的</p>
+<blockquote>
+<p>Thm1:一个语言是正则的，当且仅当有一个非确定型有穷自动机识别它<br>a.如果有一天NFA能识别这个语言，则它是正则的。<br>b.仅当，有一台NFA识别这个语言时，它才是正则的</p>
+</blockquote>
+<blockquote>
+<p>Thm2:一个语言是正则的，当且仅当可以用正则表达式表达它<br>a.如果一个语言可以用正则表达式描述，那么它是正则的<br>b.如果一个语言是正则的，则可以用正则表达式描述它<br>(想要证明B，我们需要引入一个新的概念：广义非确定性有穷自动机，见下文 )</p>
+</blockquote>
+<h1 id="CS335-lecture4"><a href="#CS335-lecture4" class="headerlink" title="CS335 lecture4"></a>CS335 lecture4</h1><h3 id="正则表达式及其形式化定义"><a href="#正则表达式及其形式化定义" class="headerlink" title="正则表达式及其形式化定义"></a>正则表达式及其形式化定义</h3><blockquote>
+<p>可以用正则运算符构造描述语言的表达式，称为正则表达式<br>在正则表达式中，先做星号运算，然后再做连接运算，最后做并运算。用括号可以改变运算顺序</p>
+</blockquote>
+<p><strong>形式化定义</strong><br>称R是一个正则表达式，如果R是:<br>1.a,这里的a是字母表中的一个字母<br>2.ε<br>3.∅<br>4.(R1 U R2),这里R1和R2是正则表达式<br>5.(R1R2),这里R1,R2是正则表达式<br>6.(R*)，这里的R是正则表达式</p>
+<p>其中,第一二条分别表示语言{a},语言{ε}。第三条代表空语言。另外，ε代表只包含一个字符串(空串)的语言，而空集符号就是不包含任何字符串的语言<br>当想要明显地区分正则表达式和它所描述的语言时，把R描述的语言写作 L(R) </p>
+<blockquote>
+<p>Thm：如果过A是一个正则表达式，对于一些正则表达式，则有A = L(R)</p>
+</blockquote>
+<p>另外，把空集连接到任何集合上，得到的都是空集</p>
+<blockquote>
+<p>把空语言加到任一其他语言上不会改变这个语言<br>把空串加到任一字符串上不会改变这个字符串<br>R U ∅ = R    R ∘ ε = R</p>
+</blockquote>
+<h3 id="DFAs-gt-Regular-Expressions"><a href="#DFAs-gt-Regular-Expressions" class="headerlink" title="DFAs -&gt; Regular Expressions"></a>DFAs -&gt; Regular Expressions</h3><p>Recall Thm : If 𝑅 is a regular expression and 𝐴=𝐿(𝑅) then 𝐴 is regular</p>
+<blockquote>
+<p>如果R是一个正则表达式，而A是该表达式的语言。那么A就是正则的</p>
+</blockquote>
+<p>New Thm:  If 𝐴 is regular then 𝐴=𝐿(𝑅) for some regular expr 𝑅<br>我们想要证明这个，需要引入新的理论——GNFA</p>
+<h3 id="广义非确定性有穷自动机-Generalized-NFA"><a href="#广义非确定性有穷自动机-Generalized-NFA" class="headerlink" title="广义非确定性有穷自动机 Generalized NFA"></a>广义非确定性有穷自动机 Generalized NFA</h3><p>Def:广义不确定状态机GNFA 指的是<br>一种类似于NFA，但是允许使用正则表达式作为转移符号的状态机</p>
+<blockquote>
+<p>广义非确定型有穷自动机就是非确定型有穷自动机，只是转移箭头可以用任何正则表达式作标号。也就是说，GNFA读入的是符号段</p>
+</blockquote>
+<p>为方便起见，我们规定：<br>1.起始状态有射到每一个其它状态的箭头，但是没有从任何其它状态射入的箭头<br>2.有唯一的一个接受状态，并且它有从其他每一个状态射入的箭头，但是没有射到任何其它状态的箭头<br>3.除了起始状态和接受状态，每一个状态到自身和其他每一个状态都有一个箭头</p>
+<p>Lemma(引理):  Every GNFA 𝐺 has an equivalent regular expression 𝑅</p>
+<h4 id="DFAs-gt-GNFA"><a href="#DFAs-gt-GNFA" class="headerlink" title="DFAs -&gt; GNFA"></a>DFAs -&gt; GNFA</h4><p>添加一个新的起始状态和一个新的接受状态，从新的起始状态到原起始状态有一个ε箭头，从每一个原接受状态到新接受状态有一个ε箭头<br>如果一个箭头有多个标记，则把它替换成一个标记着原先标记的并集的箭头<br>最后，在没有箭头的状态之间添加标记∅的箭头</p>
+<h3 id="GNFA-→Regular-Expressions"><a href="#GNFA-→Regular-Expressions" class="headerlink" title="GNFA →Regular Expressions"></a>GNFA →Regular Expressions</h3><p>想要把GNFA转化为正则表达式，我们就需要一步步的化简GNFA的状态数k<br>显然，k是&gt;=2的，我们不断构造有k-1个状态的GNFA，直到把它化简成只有两个状态<br>我们设有状态qi,qj,qr,其中qr是我们想要删去的一个状态</p>
+<p>在原机器中，如果<br>1.qi到qr有一个标记为R1的箭头<br>2.qr到自己有一个标记为R2的箭头<br>3.qr到qj有一个标记为R3的箭头<br>4.qi到qj有一个标记为R4的箭头<br>那么在原机器中从qi到qj的箭头标记为<br>(R1)(R2)*(R3)U(R4)</p>
+<p>证明例见PPT或书</p>
+<h2 id="非正则语言-Non-Regular-Languages"><a href="#非正则语言-Non-Regular-Languages" class="headerlink" title="非正则语言 Non-Regular Languages"></a>非正则语言 Non-Regular Languages</h2><p>证明一个语言是正则的，我们需要提供一个DFA<br>证明一个语言是非正则的，我们需要提供证明PROOF（仅仅说明我们无法找到它的DFA是不足够的）<br>想要证明非正则性，需要运用一个正则性的定理，我们叫做<strong>泵引理 pumping lemma</strong><br>如果能证明一个语言没有这种性质，则可以保证它不是正则的</p>
+<h3 id="泵引理"><a href="#泵引理" class="headerlink" title="泵引理"></a>泵引理</h3><blockquote>
+<p>语言中的所有字符串只要它的长度不小于某个特定的值————泵长度 pumping length ， 就可以被抽取<br>抽取：每一个这样的字符串1都包含一个字串，把这段子串重复任意次，得到的字符串仍在这个语言中   </p>
+</blockquote>
+<p>若A是一个正则语言，则存在一个数p（也就是泵长度），使得，如果s是A中的任一长度不小于p的字符串，那么s可以被分为xyz三段，即s = xyz<br>而且，满足以下条件<br>1.对于每一个i &gt;=0,x$y^i$z ∈ A<br>2.|y|&gt;0<br>3.|xy|&lt;= p  </p>
+<blockquote>
+<p>Informally:  𝐴 is regular → every long string in 𝐴 can be pumped and the result stays in 𝐴.   </p>
+</blockquote>
+<p>if  𝑠∈𝐴  and  |𝑠|≥𝑝  then  𝑠=𝑥𝑦𝑧  where  </p>
+<ol>
+<li> 𝑥$𝑦^𝑖$𝑧∈𝐴  for all 𝑖≥0             </li>
+<li> 𝑦≠”ε”   </li>
+<li>|𝑥𝑦|≤𝑝    </li>
+</ol>
+<h3 id="证明非正则性的办法"><a href="#证明非正则性的办法" class="headerlink" title="证明非正则性的办法"></a>证明非正则性的办法</h3><p>我们一般以反证法来证明一个语言不是正则语言  </p>
+<p>𝐷={$0^𝑘$ $1^𝑘$ |𝑘≥0}<br>1.假设D是一个正则语言<br>2.通过泵引理，我们可以得到：𝑠=$0^𝑝$ $1^𝑝$∈𝐷<br>3.而且，泵引理认为可以把s切分为xyz三个部分。而此时<br>因此，假设是错误的，因此D是非正则的</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">RetenQ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/01/20/cs335%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA_%E4%B8%80/">http://example.com/2022/01/20/cs335%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA_%E4%B8%80/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">RetenQ的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C-cs335%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA/">MIEC生存手册,cs335计算理论</a></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%BA%8C/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">cs265软件测试(二)</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/20/cs335%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA_%E4%B8%89/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">cs335计算理论(三)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/20/cs335%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA_%E4%B8%89/" title="cs335计算理论(三)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">cs335计算理论(三)</div></div></a></div><div><a href="/2022/01/20/cs335%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA_%E4%BA%8C/" title="cs335计算理论(二)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">cs335计算理论(二)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s3.bmp.ovh/imgs/2022/01/8810259d94a68ce8.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="author-info__name">RetenQ</div><div class="author-info__description">于是百无聊赖中写下了答案的最后一笔</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RetenQ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com//RetenQ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://twitter.com/RetenQ" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="mailto:RetenQ@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">你好！这里是某csse菜鸡的博客，有需要的话欢迎通过QQ或者Email联系我！ 3452567280 RetenQ@outlook.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CS335-lecture1"><span class="toc-number">3.</span> <span class="toc-text">CS335 lecture1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Outline"><span class="toc-number">3.1.</span> <span class="toc-text">Outline</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Automata-and-Language-Theory"><span class="toc-number">3.1.0.1.</span> <span class="toc-text">Automata and Language Theory</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Computability-Theory"><span class="toc-number">3.1.0.2.</span> <span class="toc-text">Computability Theory</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Complexity-Theory"><span class="toc-number">3.1.0.3.</span> <span class="toc-text">Complexity Theory</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Book%EF%BC%9A-ntroduction-to-the-Theory-of-Computation-Sipser-3rd-Edition-US"><span class="toc-number">3.1.0.4.</span> <span class="toc-text">Book： ntroduction to the Theory of Computation,Sipser, 3rd Edition US</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E9%A2%84%E5%A4%87"><span class="toc-number">3.2.</span> <span class="toc-text">理论知识预备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Set%E9%9B%86%E5%90%88"><span class="toc-number">3.2.0.1.</span> <span class="toc-text">Set集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.2.0.1.1.</span> <span class="toc-text">基本概念与表示</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-number">3.2.0.1.2.</span> <span class="toc-text">集合间的运算</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Cartesian-Product-%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="toc-number">3.2.0.1.3.</span> <span class="toc-text">Cartesian Product 笛卡尔积</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BB%A5%E5%8F%8A%E9%9B%86%E5%90%88%E9%97%B4%E7%9A%84%E5%87%BD%E6%95%B0%E5%85%B3%E7%B3%BBFunction"><span class="toc-number">3.2.0.2.</span> <span class="toc-text">函数以及集合间的函数关系Function</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Strings%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">3.2.0.3.</span> <span class="toc-text">Strings字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-number">3.2.0.3.1.</span> <span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">3.2.0.3.2.</span> <span class="toc-text">字符串的长度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Reverse-of-string-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E7%BD%AE"><span class="toc-number">3.2.0.3.3.</span> <span class="toc-text">Reverse of string 字符串转置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%81%8F%E5%BA%8F-Partial-Order-on-Strings"><span class="toc-number">3.2.0.3.4.</span> <span class="toc-text">字符串的偏序 Partial Order on Strings</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80"><span class="toc-number">3.2.0.4.</span> <span class="toc-text">语言</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80%E7%9A%84%E4%B8%B2%E8%81%94-Concatenation-of-Languages"><span class="toc-number">3.2.0.4.1.</span> <span class="toc-text">语言的串联 Concatenation of Languages</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E4%B8%8E%E7%A4%BA%E4%BE%8B"><span class="toc-number">3.2.0.4.1.1.</span> <span class="toc-text">运算与示例</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80-language"><span class="toc-number">3.2.0.4.1.2.</span> <span class="toc-text">语言 language</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-Finite-Automata-%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="toc-number">3.3.</span> <span class="toc-text">有限状态机 Finite Automata (有穷自动机)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%A2%E5%BC%8F%E5%8C%96%E5%AE%9A%E4%B9%89Formal-Definition"><span class="toc-number">3.3.0.1.</span> <span class="toc-text">形式化定义Formal Definition</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%BF%90%E7%AE%97"><span class="toc-number">3.3.0.2.</span> <span class="toc-text">正则运算</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">3.3.0.2.0.1.</span> <span class="toc-text">示例</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80"><span class="toc-number">3.3.1.</span> <span class="toc-text">正则语言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80%E5%B0%81%E9%97%AD%E6%80%A7"><span class="toc-number">3.3.1.1.</span> <span class="toc-text">正则语言封闭性</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CS335-lecture2-3"><span class="toc-number">4.</span> <span class="toc-text">CS335 lecture2-3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA-NondeterministicFinite-Automata"><span class="toc-number">4.1.</span> <span class="toc-text">非确定性有限状态机 NondeterministicFinite Automata</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80%E7%9A%84%E9%97%AD%E5%8C%85%E5%B1%9E%E6%80%A7"><span class="toc-number">4.1.1.</span> <span class="toc-text">正则语言的闭包属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A5%E8%87%AA%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7nondeterminism%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">4.1.2.</span> <span class="toc-text">来自非确定性nondeterminism的新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NFA%E5%BD%A2%E5%BC%8F%E5%8C%96%E5%AE%9A%E4%B9%89"><span class="toc-number">4.1.2.1.</span> <span class="toc-text">NFA形式化定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86NFAs%E8%BD%AC%E5%8C%96%E4%B8%BADFAs"><span class="toc-number">4.1.3.</span> <span class="toc-text">将NFAs转化为DFAs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80%E7%9A%84%E9%97%AD%E5%8C%85%E6%80%A7"><span class="toc-number">4.1.4.</span> <span class="toc-text">正则语言的闭包性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Regular-Expressions-%E2%86%92NFA"><span class="toc-number">4.1.5.</span> <span class="toc-text">Regular Expressions →NFA</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CS335-lecture4"><span class="toc-number">5.</span> <span class="toc-text">CS335 lecture4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8F%8A%E5%85%B6%E5%BD%A2%E5%BC%8F%E5%8C%96%E5%AE%9A%E4%B9%89"><span class="toc-number">5.0.1.</span> <span class="toc-text">正则表达式及其形式化定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DFAs-gt-Regular-Expressions"><span class="toc-number">5.0.2.</span> <span class="toc-text">DFAs -&gt; Regular Expressions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA-Generalized-NFA"><span class="toc-number">5.0.3.</span> <span class="toc-text">广义非确定性有穷自动机 Generalized NFA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DFAs-gt-GNFA"><span class="toc-number">5.0.3.1.</span> <span class="toc-text">DFAs -&gt; GNFA</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GNFA-%E2%86%92Regular-Expressions"><span class="toc-number">5.0.4.</span> <span class="toc-text">GNFA →Regular Expressions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80-Non-Regular-Languages"><span class="toc-number">5.1.</span> <span class="toc-text">非正则语言 Non-Regular Languages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%B5%E5%BC%95%E7%90%86"><span class="toc-number">5.1.1.</span> <span class="toc-text">泵引理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E9%9D%9E%E6%AD%A3%E5%88%99%E6%80%A7%E7%9A%84%E5%8A%9E%E6%B3%95"><span class="toc-number">5.1.2.</span> <span class="toc-text">证明非正则性的办法</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_PgSQL%E9%83%A8%E5%88%86_%E4%B8%8A/" title="cs130数据库:PgSql模块(上)"><img src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cs130数据库:PgSql模块(上)"/></a><div class="content"><a class="title" href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_PgSQL%E9%83%A8%E5%88%86_%E4%B8%8A/" title="cs130数据库:PgSql模块(上)">cs130数据库:PgSql模块(上)</a><time datetime="2022-01-19T16:00:00.000Z" title="发表于 2022-01-20 00:00:00">2022-01-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_PgSQL%E9%83%A8%E5%88%86_%E4%B8%8B/" title="cs130数据库:PgSql模块(下)"><img src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cs130数据库:PgSql模块(下)"/></a><div class="content"><a class="title" href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_PgSQL%E9%83%A8%E5%88%86_%E4%B8%8B/" title="cs130数据库:PgSql模块(下)">cs130数据库:PgSql模块(下)</a><time datetime="2022-01-19T16:00:00.000Z" title="发表于 2022-01-20 00:00:00">2022-01-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_%E7%90%86%E8%AE%BA%E6%A8%A1%E5%9D%97_%E4%B8%8B/" title="cs130数据库:理论知识模块(下)"><img src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cs130数据库:理论知识模块(下)"/></a><div class="content"><a class="title" href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_%E7%90%86%E8%AE%BA%E6%A8%A1%E5%9D%97_%E4%B8%8B/" title="cs130数据库:理论知识模块(下)">cs130数据库:理论知识模块(下)</a><time datetime="2022-01-19T16:00:00.000Z" title="发表于 2022-01-20 00:00:00">2022-01-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_%E7%90%86%E8%AE%BA%E6%A8%A1%E5%9D%97_%E4%B8%8A/" title="cs130数据库:理论知识模块(上)"><img src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cs130数据库:理论知识模块(上)"/></a><div class="content"><a class="title" href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_%E7%90%86%E8%AE%BA%E6%A8%A1%E5%9D%97_%E4%B8%8A/" title="cs130数据库:理论知识模块(上)">cs130数据库:理论知识模块(上)</a><time datetime="2022-01-19T16:00:00.000Z" title="发表于 2022-01-20 00:00:00">2022-01-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/20/cs210%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E4%B8%89/" title="cs210算法与数据结构(三)"><img src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cs210算法与数据结构(三)"/></a><div class="content"><a class="title" href="/2022/01/20/cs210%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E4%B8%89/" title="cs210算法与数据结构(三)">cs210算法与数据结构(三)</a><time datetime="2022-01-19T16:00:00.000Z" title="发表于 2022-01-20 00:00:00">2022-01-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By RetenQ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://example.com/2022/01/20/cs335%E8%AE%A1%E7%AE%97%E7%90%86%E8%AE%BA_%E4%B8%80/'
+    this.page.identifier = '2022/01/20/cs335计算理论_一/'
+    this.page.title = 'cs335计算理论(一)'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
