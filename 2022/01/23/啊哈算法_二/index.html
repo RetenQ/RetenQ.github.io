@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>《啊哈!算法》总结与概况(二) | RetenQ的博客</title><meta name="keywords" content="算法，总结，新手基础]"><meta name="author" content="RetenQ"><meta name="copyright" content="RetenQ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="对于《啊哈!算法》这本书的总结和知识点归纳，该书为基本知识书，又算法基础的建议忽略">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《啊哈!算法》总结与概况(二)">
+<meta property="og:url" content="http://example.com/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%8C/index.html">
+<meta property="og:site_name" content="RetenQ的博客">
+<meta property="og:description" content="对于《啊哈!算法》这本书的总结和知识点归纳，该书为基本知识书，又算法基础的建议忽略">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg">
+<meta property="article:published_time" content="2022-01-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-23T06:41:35.096Z">
+<meta property="article:author" content="RetenQ">
+<meta property="article:tag" content="算法，总结，新手基础]">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2022/01/12/FP23fqhJaZjYNLw.jpg"><link rel="canonical" href="http://example.com/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%8C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《啊哈!算法》总结与概况(二)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-23 14:41:35'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s3.bmp.ovh/imgs/2022/01/8810259d94a68ce8.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">RetenQ的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">《啊哈!算法》总结与概况(二)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-22T16:00:00.000Z" title="发表于 2022-01-23 00:00:00">2022-01-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-23T06:41:35.096Z" title="更新于 2022-01-23 14:41:35">2022-01-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E5%9F%BA%E7%A1%80/">算法与数据结构，基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="《啊哈!算法》总结与概况(二)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是一种特殊的线性结构，它只允许在队列的首部head进行删除，以及在尾部tail进行插入<br>这两种操作分别被称为“出队”和“入队”。而当队列中没有元素即head=tail时，称其为“空队列”</p>
+<p>我们现在可以将队列的三个基本元素（一个数组，两个变量）封装为一个结构体类型</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">queue</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">100</span>] ; <span class="comment">//存储内容的主体</span></span><br><span class="line">    <span class="keyword">int</span> head ;  <span class="comment">//队首</span></span><br><span class="line">    <span class="keyword">int</span> tail ;  <span class="comment">//队尾</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//——————————————————————————</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">queuq</span> <span class="title">q</span>;</span><span class="comment">//定义结构体变量，和其它数据类型一样</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面定义了以一个结构体类型，我们通常把它放在main外面，其定义末尾有一个;<br>其中，strcut是结构体的关键字，queue是我们为这个结构体起的名字<br>这个结构体有三个成员：整型数组data,整型head,tail。这样以来，我们就可以把它们当作一个整体来看待<br>访问结构体内的内部成员使用点(.)</p>
+</blockquote>
+<p>下面这段代码就是我们用结构体实现队列操作的实例</p>
+<p>##代码示例</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">queue</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">100</span>] ; <span class="comment">//存储内容的主体</span></span><br><span class="line">    <span class="keyword">int</span> head ;  <span class="comment">//队首</span></span><br><span class="line">    <span class="keyword">int</span> tail ;  <span class="comment">//队尾</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">queue</span> <span class="title">q</span> ;</span> </span><br><span class="line">    <span class="keyword">int</span> i ;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//下面初始化队列</span></span><br><span class="line">    q.head = <span class="number">1</span> ; </span><br><span class="line">    q.tail = <span class="number">1</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span> ; i&lt;= <span class="number">9</span> ; i ++)&#123;</span><br><span class="line">        <span class="comment">//依次向队列中插入九个数</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;q.data[q.tail]);</span><br><span class="line">        q.tail++ ; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(q.head &lt; q.tail)&#123;</span><br><span class="line">        <span class="comment">//当队列不为空的时候进行这个循环操作</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//打印队首并将队首出队</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,q.data[q.head]);</span><br><span class="line">        q.head++;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//先将新的队首的数添加到队尾</span></span><br><span class="line">        q.data[q.tail] = q.data[q.head];</span><br><span class="line">        q.tail++;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//再将队首出队</span></span><br><span class="line">        q.head++ ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getchar();getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>栈是一种后进先出的数据结构，它就是栈<br>栈限定了它只能在一端进行插入和删除的操作，这决定了它“后进先出”的性质<br>栈的实现也比较简单：利用一个一维数组和一个指向栈顶部的变量（称它为top）即可，我们前面所讲的“插入”和“删除”的操作，就是通过这个”top”来实现的</p>
+<h5 id="入栈"><a href="#入栈" class="headerlink" title="入栈"></a>入栈</h5><p>入栈的操作很简易</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">top++ ； </span><br><span class="line">s[top] = x ; <span class="comment">//s是定义出来储存的数组/char组</span></span><br></pre></td></tr></table></figure>
+<p>简化一下，就可以化成一行</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">s[++top] = a[i]; </span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 代码实战</span><br><span class="line">比如我们想要利用程序来检测一个字符串是否是回文</span><br><span class="line">```c</span><br><span class="line"><span class="comment">//首先我们需要读取这个字符串</span></span><br><span class="line"><span class="keyword">char</span> a[<span class="number">101</span>],s[<span class="number">101</span>];</span><br><span class="line"><span class="keyword">int</span> i,len,mid,next,top ; </span><br><span class="line"></span><br><span class="line">gets(a);<span class="comment">//读入一行字符串</span></span><br><span class="line">len = <span class="built_in">strlen</span>(a); <span class="comment">// 得到字符串的长度</span></span><br><span class="line">mid = len/<span class="number">2</span> <span class="number">-1</span> ; <span class="comment">//得到字符串中心的那个数字</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//下面进行栈的初始化</span></span><br><span class="line">top = <span class="number">0</span> ;</span><br><span class="line"><span class="comment">//将mid之前的字符依次入栈</span></span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span> ; i &lt;= mid  ; i++ )&#123;</span><br><span class="line">    s[++top] = a[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//之后判断字符串的长度是奇数还是偶数，并且找到我们需要进行字符匹配的起始下标</span></span><br><span class="line"><span class="keyword">if</span>(len%<span class="number">2</span> == <span class="number">0</span> )&#123;</span><br><span class="line">    next = mid+<span class="number">1</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    next = mid+<span class="number">2</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//开始进行字符的匹配</span></span><br><span class="line"><span class="keyword">for</span>(i=next;i&lt;=len<span class="number">-1</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[i] != s[top])</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    top -- ; <span class="comment">//向前检查</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果top的值为0，则说明栈内所有的字符都被一一匹配了</span></span><br><span class="line"><span class="keyword">if</span>(top == <span class="number">0</span> )   </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;YES&quot;</span>);</span><br><span class="line"><span class="keyword">else</span>            </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;NO&quot;</span>) ; </span><br><span class="line"></span><br><span class="line">getchar();getchar();</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span> ;</span><br></pre></td></tr></table></figure>
+
+<h2 id="链表-数组模拟"><a href="#链表-数组模拟" class="headerlink" title="链表(数组模拟)"></a>链表(数组模拟)</h2><p>链表也可以使用数组来实现，操作和基础知识比指针简单<br>但是个人觉得就思路和操作的清晰，以及对<strong>链表</strong>的理解而言，还是用指针好  </p>
+<h3 id="模拟链表介绍"><a href="#模拟链表介绍" class="headerlink" title="模拟链表介绍"></a>模拟链表介绍</h3><p>我们可以利用两个数组，分别记录链表要的两个东西：数据和地址<br>我们使用一个数组data，来存储每个结点的数据<br>使用另外一个数组right，来存储序列中每一个数右边的数的位置  </p>
+<p>比如现在二者如下：<br>位置    1  2  3   4   5   06  07  08   09<br>data:   2  3   5   8   9   10  18  26  32<br>right:  2  3   4   5   6   7   8   9   0   </p>
+<p>right[9] = 0 ,就代表data第九位的的右边没有数据   </p>
+<blockquote>
+<p>这里说一下，众所周知数组的第一位下标是0，但是书里按1开始算了<br>本着以书为本的原则，就没有修改，况且对于做链表而言也没区别<br>就是习惯了0开始数，看着难受  </p>
+</blockquote>
+<p>再如right[1]的值是2，指的是1号元素的右边的元素是2号元素（存放在data[2]中）</p>
+<p>下面尝试按大小顺序，把6这个数值加入进去，那么该怎么做呢？<br>对于data数组比较简单，我们只需要做<strong>添加数据</strong>这个操作<br>让我们把这个数据添加到10号位置<br>位置    1  2  3   4   5   06  07  08   09   <strong>10</strong><br>data:   2  3   5   8   9   10  18  26  32   <strong>6</strong>    </p>
+<p>对于right数组，会复杂一点，毕竟要排序和改地址<br>我们通过观察data数组，我们的6需要添加到5和8之间，也就是3号元素和4号元素之间    </p>
+<p>5对应的号数是3，8则是4.原本的地址是3号-&gt;4号，现在我们要加入6<br>那么我们新的次序是<strong>3号-&gt;10号-&gt;4号</strong>，即：<br>1.把3号“右边一位”改成10号<br>2.把10号“右边一位”改成4号<br>3.4号“右边一位”不变  </p>
+<p>位置    1  2  3   4   5   06  07  08   09   10<br>data:   2  3   5   8   9   10  18  26  32   6<br>right:  2  3   <strong>10</strong>   5   6   7   08   09   0   <strong>4</strong>  </p>
+<h3 id="代码实例："><a href="#代码实例：" class="headerlink" title="代码实例："></a>代码实例：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data[<span class="number">101</span>],right[<span class="number">101</span>];  <span class="comment">//大小没有硬性要求，</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i,n,t,len ; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//开始读入已有的数</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n) ; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span> ; i&lt;=n ; i++)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;data[i]) ; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    len = n ; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//初始化数组</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span> ; i&lt;= n ,i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i!=n)    right[i] = i+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span>        right[i] = <span class="number">0</span> ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//直接在数组data末尾增加一个数</span></span><br><span class="line">    len++;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;data[len]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//从链表透开始遍历</span></span><br><span class="line">    t = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">while</span>(t!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(data[right[t]] &gt; date[len])&#123;</span><br><span class="line">            <span class="comment">//如果当前结点的下一结点的值大于待插入数，则把数插入</span></span><br><span class="line">            right[len] = right[t];</span><br><span class="line">            <span class="comment">//新插入的数的下一结点的编号，等于当前结点的下一结点编号  </span></span><br><span class="line"></span><br><span class="line">            right[t] = len ; </span><br><span class="line">            <span class="comment">//当前结点的下一个结点编号，就是新插入的数的编号</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">break</span> ; <span class="comment">//插入完成，我们跳出循环</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        t = right[t] ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//输出链表中所有的数</span></span><br><span class="line">    t = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">while</span>(t!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,data[t]);</span><br><span class="line">        r = tight[t] ; <span class="comment">//根据right数组的设置，读取下一个数</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    getchar();</span><br><span class="line">    getchar();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">### 小结    </span><br><span class="line">模拟链表以两个对应的数组，代替了指针    </span><br><span class="line">两者各有优劣，但是指针用的应该更多，毕竟你数组大小存在着限制    </span><br><span class="line">可以把模拟链表作为简单/削弱版的链表     </span><br><span class="line">不过，使用模拟链表一样可以实现双向链表和循环链表，这里就先不提了    </span><br><span class="line"></span><br><span class="line"># 链表(指针)  </span><br><span class="line">在存储一大波数的时候，如果使用数组，有时会感到数组显得不太灵活  </span><br><span class="line">我们可以在C语言中使用指针和动态分配函数<span class="built_in">malloc</span>来实现**链表**  </span><br><span class="line">&gt;关于指针，这里就不赘述了，默认已经了解相关知识  </span><br><span class="line">  </span><br><span class="line">### 指针实现  </span><br><span class="line">####<span class="meta"># malloc </span></span><br><span class="line"><span class="built_in">malloc</span> 函数的作用就是从内存中申请分配指定**字节大小**的内存空间  </span><br><span class="line">```<span class="function">c</span></span><br><span class="line"><span class="function"><span class="title">malloc</span><span class="params">(<span class="number">4</span>)</span></span>;  <span class="comment">//这样就申请了四个字节大小的内存空间</span></span><br><span class="line">```  </span><br><span class="line">  </span><br><span class="line">&gt;如果不知道字节大小，那么使用<span class="keyword">sizeof</span>()查看就好了  </span><br><span class="line"></span><br><span class="line"><span class="built_in">malloc</span> 函数的返回值是<span class="keyword">void</span>*，也就是未确定类型的指针，它可以被强制转换为任何其它类型的指针  </span><br><span class="line">```c</span><br><span class="line"><span class="keyword">int</span> *p ; </span><br><span class="line">p = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)) ; </span><br><span class="line">```  </span><br><span class="line">比如这样我们就得到了一个整型的指针，它可以存放整数  </span><br><span class="line">&gt;指针变量存放的是一个内存空间的首地址(第一个字节的地址)</span><br><span class="line">&gt;但是这个空间占用了多少个字节，用来存储什么类型的数据，则是由指针类型标明的  </span><br><span class="line">下面让我们来实战试试这玩意  </span><br><span class="line"></span><br><span class="line">### 代码实例  </span><br><span class="line">```c</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *p ;  <span class="comment">//定义一个指针</span></span><br><span class="line">    p = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>)) ; <span class="comment">//指针p来获取动态分配的内存空间地址</span></span><br><span class="line">    *p = <span class="number">10</span>  ; <span class="comment">//向指针p所指向的内存空间存入10</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,*p); <span class="comment">//输出指针p所指向的内存中的值</span></span><br><span class="line"></span><br><span class="line">    getchar();getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">现在我们尝试使用链表</span><br><span class="line"></span><br><span class="line">### 构建链表  </span><br><span class="line">我们把链表存储数据的地方叫做**结点**，每一个结点有两个部分组成    </span><br><span class="line">一部分用来存储具体数值，另一部分存储下一个结点的位置  </span><br><span class="line">```c</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data ; </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span> ;</span> </span><br><span class="line">&#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">OK,我们已经定义了一个相关的结构体，那么下一步我们来构建链表  </span><br><span class="line"><span class="number">1.</span>首先，我们需要一个头指针head来指向链表的最开始的地方(链表还没有建立的时候头指针为空/指向空结点)  </span><br><span class="line"><span class="number">2.</span>创建一个结点，设置所需要的两个部分。这里顺便一提，访问结构体内部成员使用```-&gt;```而非点```.```，因为我们要访问的p是一个指针  </span><br><span class="line"><span class="number">3.</span>设置头指针  </span><br><span class="line">### 代码实例  </span><br><span class="line">```c</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个结构体表示链表的结点类型  </span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> data ; </span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span> ;</span> </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//相关变量</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">head</span>,*<span class="title">p</span>,*<span class="title">q</span>,*<span class="title">t</span> ;</span> </span><br><span class="line">    <span class="keyword">int</span> i,n,a ; </span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);<span class="comment">//读入多少数</span></span><br><span class="line"></span><br><span class="line">    head = <span class="literal">NULL</span> ; <span class="comment">//头指针为空</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n,i++)&#123;</span><br><span class="line">        <span class="comment">//利用循环读入n个数</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">        <span class="comment">//动态申请一个空间来存放一个结点，并且使用临时指针p来指向这个结点  </span></span><br><span class="line">        p = (struct node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct node));</span><br><span class="line">        p-&gt;data = a ; <span class="comment">//把刚才读到的数据存储到当前结点的data域中</span></span><br><span class="line">        p-&gt;next = <span class="literal">NULL</span> ; <span class="comment">//设置当前结点的后继指针指向空。也就是当前结点的一个结点为空</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">NULL</span>)&#123;</span><br><span class="line">            head = p ; <span class="comment">//如果是第一个创建的结点，则把头指针指向他</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            q-&gt;next = p ;<span class="comment">//如果不是第一个，那么将上一个结点的后继指针指向当前结点</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        q = p ; <span class="comment">//把q也指向这个结点  </span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//下面试一下输出链表所有数</span></span><br><span class="line">    t = head ; </span><br><span class="line">    <span class="keyword">while</span>(t!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,t-&gt;data);</span><br><span class="line">        t = t-&gt;next ; <span class="comment">//继续下一个结点</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getchar();getchar();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如上所示，我们得到了一个链表。但是只得到链表是不够的，我们还需要加减数据  </p>
+<h3 id="链表数据的加减"><a href="#链表数据的加减" class="headerlink" title="链表数据的加减"></a>链表数据的加减</h3><p>这里以加数据为例子，删数据同理。方法如下：<br>1.创建一个临时指针，并且从链表头部一直往下遍历<br>2.按照条件筛选位置，成功后，将对应的指针修改。让这个被添加的数据处于<strong>原本前后两个地址的中间</strong>  </p>
+<p>增加数据的代码实现如下:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下面来读数据  </span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a) ; </span><br><span class="line"></span><br><span class="line">t = head ; <span class="comment">//t是临时指针，从链表的头部开始遍历  </span></span><br><span class="line"><span class="keyword">while</span>(t!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">    <span class="comment">//没有到达链表尾部之前，我们都进行循环遍历  </span></span><br><span class="line">    <span class="keyword">if</span>(t-&gt;next == <span class="literal">NULL</span>  || t-&gt;next-&gt;data &gt; a)&#123;</span><br><span class="line">        <span class="comment">//如果当前结点是最后一个结点，或者我们找到了需要插入的位置</span></span><br><span class="line">        <span class="comment">//这里以“按顺序插入”为例子</span></span><br><span class="line"></span><br><span class="line">        p = (struct node *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct node)) ; </span><br><span class="line">        <span class="comment">//动态申请一个空间，来存放新结点  </span></span><br><span class="line">        p-&gt;data = a ;</span><br><span class="line">        p-&gt;next = t-&gt;next ; </span><br><span class="line">        <span class="comment">//新增结点的后续指针，当然是要指向当前指针后继指针指向的点</span></span><br><span class="line">        t-&gt;next = p ;</span><br><span class="line">        <span class="comment">//当前结点的后继指针指向新增结点</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">//插入完毕时退出循环</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    t = t-&gt;next ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="含插入的完整代码"><a href="#含插入的完整代码" class="headerlink" title="含插入的完整代码"></a>含插入的完整代码</h3><pre><code class="C">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+//创建一个结构体表示链表的结点类型  
+    struct node&#123;
+    int data ; 
+    struct node *next ; 
+&#125; 
+
+int main()&#123;
+    //相关变量
+    struct node *head,*p,*q,*t ; 
+    int i,n,a ; 
+
+    scanf(&quot;%d&quot;,&amp;n);//读入多少数
+
+    head = NULL ; //头指针为空
+    for(i=1;i&lt;=n,i++)&#123;
+        //利用循环读入n个数
+        scanf(&quot;%d&quot;,&amp;a);
+        //动态申请一个空间来存放一个结点，并且使用临时指针p来指向这个结点  
+        p = (struct node *)malloc(sizeof(struct node));
+        p-&gt;data = a ; //把刚才读到的数据存储到当前结点的data域中
+        p-&gt;next = NULL ; //设置当前结点的后继指针指向空。也就是当前结点的一个结点为空
+
+        if(head == NULL)&#123;
+            head = p ; //如果是第一个创建的结点，则把头指针指向他
+        &#125;else&#123;
+            q-&gt;next = p ;//如果不是第一个，那么将上一个结点的后继指针指向当前结点
+        &#125;
+
+        q = p ; //把q也指向这个结点  
+    &#125;
+
+    //下面我们尝试插入数据
+    scanf(&quot;%d&quot;,&amp;a) ; 
+
+    t = head ; //t是临时指针，从链表的头部开始遍历  
+    while(t!=NULL)&#123;
+    //没有到达链表尾部之前，我们都进行循环遍历  
+    if(t-&gt;next == NULL  || t-&gt;next-&gt;data &gt; a)&#123;
+        //如果当前结点是最后一个结点，或者我们找到了需要插入的位置
+        //这里以“按顺序插入”为例子
+
+        p = (struct node *)malloc(sizeof(struct node)) ; 
+        //动态申请一个空间，来存放新结点  
+        p-&gt;data = a ;
+        p-&gt;next = t-&gt;next ; 
+        //新增结点的后续指针，当然是要指向当前指针后继指针指向的点
+        t-&gt;next = p ;
+        //当前结点的后继指针指向新增结点
+
+        break; //插入完毕时退出循环
+    &#125;
+
+    t = t-&gt;next ; //继续下一个结点
+&#125;
+
+
+    //下面试一下输出链表所有数
+    t = head ; 
+    while(t!=NULL)&#123;
+        printf(&quot;%d&quot;,t-&gt;data);
+        t = t-&gt;next ; //继续下一个结点
+    &#125;
+
+    getchar();getchar();
+
+    return 0 ;
+&#125;
+</code></pre>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>个人认为利用指针，能更好地理解<strong>链表</strong>的思想<br>虽然学习和消化的时间比较长，但是是值得的<br>下一节，还有不用指针的模拟链表，但是个人认为少了那种精髓    </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">RetenQ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%8C/">http://example.com/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%8C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">RetenQ的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E6%80%BB%E7%BB%93%EF%BC%8C%E6%96%B0%E6%89%8B%E5%9F%BA%E7%A1%80/">算法，总结，新手基础]</a></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%B8%89/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">《啊哈!算法》总结与概况(三)</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%94/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">《啊哈!算法》总结与概况(五)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%B8%80/" title="《啊哈!算法》总结与概况(一)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-23</div><div class="title">《啊哈!算法》总结与概况(一)</div></div></a></div><div><a href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%B8%89/" title="《啊哈!算法》总结与概况(三)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-23</div><div class="title">《啊哈!算法》总结与概况(三)</div></div></a></div><div><a href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%94/" title="《啊哈!算法》总结与概况(五)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-23</div><div class="title">《啊哈!算法》总结与概况(五)</div></div></a></div><div><a href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E5%9B%9B/" title="《啊哈!算法》总结与概况(四)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-23</div><div class="title">《啊哈!算法》总结与概况(四)</div></div></a></div><div><a href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E5%85%AD/" title="《啊哈!算法》总结与概况(六)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-23</div><div class="title">《啊哈!算法》总结与概况(六)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s3.bmp.ovh/imgs/2022/01/8810259d94a68ce8.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="author-info__name">RetenQ</div><div class="author-info__description">于是百无聊赖中写下了答案的最后一笔</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RetenQ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com//RetenQ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://twitter.com/RetenQ" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="mailto:RetenQ@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">你好！这里是某csse菜鸡的博客，有需要的话欢迎通过QQ或者Email联系我！ 3452567280 RetenQ@outlook.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="toc-number">1.</span> <span class="toc-text">第二章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-number">1.1.</span> <span class="toc-text">队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88"><span class="toc-number">1.2.</span> <span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%A5%E6%A0%88"><span class="toc-number">1.2.0.0.1.</span> <span class="toc-text">入栈</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8-%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F"><span class="toc-number">1.3.</span> <span class="toc-text">链表(数组模拟)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E9%93%BE%E8%A1%A8%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.3.1.</span> <span class="toc-text">模拟链表介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E4%BE%8B%EF%BC%9A"><span class="toc-number">1.3.2.</span> <span class="toc-text">代码实例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8A%A0%E5%87%8F"><span class="toc-number">1.3.3.</span> <span class="toc-text">链表数据的加减</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AB%E6%8F%92%E5%85%A5%E7%9A%84%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.4.</span> <span class="toc-text">含插入的完整代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.3.5.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/01/23/%E7%AC%AC%E4%B8%80%E6%9C%AC%E7%AE%97%E6%B3%95%E4%B9%A6%E6%80%BB%E7%BB%93/" title="适合新手的《我的第一本算法书》总结"><img src="https://s3.bmp.ovh/imgs/2022/01/65db9403ba3b86bb.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="适合新手的《我的第一本算法书》总结"/></a><div class="content"><a class="title" href="/2022/01/23/%E7%AC%AC%E4%B8%80%E6%9C%AC%E7%AE%97%E6%B3%95%E4%B9%A6%E6%80%BB%E7%BB%93/" title="适合新手的《我的第一本算法书》总结">适合新手的《我的第一本算法书》总结</a><time datetime="2022-01-22T16:00:00.000Z" title="发表于 2022-01-23 00:00:00">2022-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%B8%80/" title="《啊哈!算法》总结与概况(一)"><img src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="《啊哈!算法》总结与概况(一)"/></a><div class="content"><a class="title" href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%B8%80/" title="《啊哈!算法》总结与概况(一)">《啊哈!算法》总结与概况(一)</a><time datetime="2022-01-22T16:00:00.000Z" title="发表于 2022-01-23 00:00:00">2022-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%B8%89/" title="《啊哈!算法》总结与概况(三)"><img src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="《啊哈!算法》总结与概况(三)"/></a><div class="content"><a class="title" href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%B8%89/" title="《啊哈!算法》总结与概况(三)">《啊哈!算法》总结与概况(三)</a><time datetime="2022-01-22T16:00:00.000Z" title="发表于 2022-01-23 00:00:00">2022-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%8C/" title="《啊哈!算法》总结与概况(二)"><img src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="《啊哈!算法》总结与概况(二)"/></a><div class="content"><a class="title" href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%8C/" title="《啊哈!算法》总结与概况(二)">《啊哈!算法》总结与概况(二)</a><time datetime="2022-01-22T16:00:00.000Z" title="发表于 2022-01-23 00:00:00">2022-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%94/" title="《啊哈!算法》总结与概况(五)"><img src="https://s3.bmp.ovh/imgs/2022/01/511b80189599fc6f.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="《啊哈!算法》总结与概况(五)"/></a><div class="content"><a class="title" href="/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%94/" title="《啊哈!算法》总结与概况(五)">《啊哈!算法》总结与概况(五)</a><time datetime="2022-01-22T16:00:00.000Z" title="发表于 2022-01-23 00:00:00">2022-01-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By RetenQ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://example.com/2022/01/23/%E5%95%8A%E5%93%88%E7%AE%97%E6%B3%95_%E4%BA%8C/'
+    this.page.identifier = '2022/01/23/啊哈算法_二/'
+    this.page.title = '《啊哈!算法》总结与概况(二)'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
