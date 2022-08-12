@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>cs265软件测试(三) | RetenQ的博客</title><meta name="keywords" content="MIEC生存手册,cs265软件测试"><meta name="author" content="RetenQ"><meta name="copyright" content="RetenQ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="来自梅努斯国际工程学院的cs265即软件测试课程的相关笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cs265软件测试(三)">
+<meta property="og:url" content="http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%89/index.html">
+<meta property="og:site_name" content="RetenQ的博客">
+<meta property="og:description" content="来自梅努斯国际工程学院的cs265即软件测试课程的相关笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png">
+<meta property="article:published_time" content="2022-01-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-30T09:01:01.953Z">
+<meta property="article:author" content="RetenQ">
+<meta property="article:tag" content="MIEC生存手册">
+<meta property="article:tag" content="cs265软件测试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png"><link rel="shortcut icon" href="https://s2.loli.net/2022/01/12/FP23fqhJaZjYNLw.jpg"><link rel="canonical" href="http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'cs265软件测试(三)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-30 17:01:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s3.bmp.ovh/imgs/2022/02/f0f20e0f88b6eb94.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">RetenQ的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">cs265软件测试(三)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-19T16:00:00.000Z" title="发表于 2022-01-20 00:00:00">2022-01-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-30T09:01:01.953Z" title="更新于 2022-01-30 17:01:01">2022-01-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">MIEC生存手册</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="cs265软件测试(三)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Lecture11-结构测试——数据流覆盖-Dataflow-Coverage"><a href="#Lecture11-结构测试——数据流覆盖-Dataflow-Coverage" class="headerlink" title="Lecture11 结构测试——数据流覆盖 Dataflow Coverage"></a>Lecture11 结构测试——数据流覆盖 Dataflow Coverage</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>1.数据流测试集中于变量被接收的节点和这些变量值被使用或引用的节点<br>2.使用所有可能的数据流来验证程序的正确性，即测试定义变量中的值及其子序列使用的每个路径的执行情况<br>3.DU(Definition/Use)对:指的是从变量的定义到后续的使用中的每个可能的路径<br>4.目标是在代码中实现DU对的完全覆盖  </p>
+<h3 id="数据流异常-Dataflow-Anomalies"><a href="#数据流异常-Dataflow-Anomalies" class="headerlink" title="数据流异常 Dataflow Anomalies"></a>数据流异常 Dataflow Anomalies</h3><blockquote>
+<p>早期的数据流分析侧重于与变量（参数、局部变量和属性）相关的一组故障，称为数据流异常或定义/引用异常<br>它们包括：<br>1.已定义但从未使用或引用的变量<br>2.在使用之前被多次定义的变量    </p>
+</blockquote>
+<blockquote>
+<p>大多数现代集成开发环境，例如Eclipse 和Netbeans，都可以检测到此类问题。    </p>
+</blockquote>
+<h3 id="数据的定义和使用"><a href="#数据的定义和使用" class="headerlink" title="数据的定义和使用"></a>数据的定义和使用</h3><p>在以下情况，我们认为变量被定义：<br>1.它是一个Input参数，比如 <code>public void test(String str)&#123;...&#125;</code><br>2.在赋值语句左侧的变量 <code> int num = 10 ;</code><br>3.它充当输出参数    </p>
+<p>在以下情况，我们认为参数被使用:<br>1.它充当函数被调用时的输入参数<code>result = sum(a,b)</code> 以及<code>return number;</code><br>2.它在赋值语句的右侧 <code>number = a+1</code>，这里的a<br>3.谓词的一部分 <code>if(number &gt; 0)&#123;...&#125;</code>    </p>
+<blockquote>
+<p>如果在谓词predicate中使用变量，则称为谓词使用（p-use）；所有其他用途都称为计算使用（c-use）   </p>
+</blockquote>
+<p><img src="https://s2.loli.net/2021/12/20/n1BslAvqFDgiY7k.png"> </p>
+<h4 id="Definition-Clear-Paths"><a href="#Definition-Clear-Paths" class="headerlink" title="Definition-Clear Paths"></a>Definition-Clear Paths</h4><p>Definition-Clear Paths 指的是一个变量x在定义和使用之间的路径，而这条路径的中间并没有再次定义x<br><img src="https://s2.loli.net/2021/12/20/kv4y1jc8SPNmxu3.png"> </p>
+<h4 id="Definition-Use-Pair"><a href="#Definition-Use-Pair" class="headerlink" title="Definition-Use Pair"></a>Definition-Use Pair</h4><p>指的是对于变量x,这里有一个关于x的定义d(x)，并且有着对应的使用x u(x)。在这种情况下，d(x)和u(x)之前至少存在这一个Definition-Clear Paths<br><img src="https://s2.loli.net/2021/12/20/O5Fyl6HoBDqcrE4.png"> </p>
+<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><p>1.构建 DU对 的表<br>确定软件测试的所有变量<br>识别与变量相关的所有使用<br>列出定义的编号和使用定义/使用表<br><img src="https://s2.loli.net/2021/12/20/n9sjgBQ6OrzpL2v.png"> </p>
+<p>注意：<br>1.变量声明不能被视为定义<br>2.递增和递减操作会导致在定义后立即出现使用  </p>
+<p>2.识别DU对 Identify DU-Pairs<br><img src="https://s2.loli.net/2021/12/20/9RBmFazASw2vGJ5.png"> </p>
+<p>3.编写测试用例<br>每个可能的DU对都是测试用例<br>有些DU-Pairs是不可能执行的。这些DU-Pairs被视为候选DU对，而不用为它们分配测试用例<br><img src="https://s2.loli.net/2021/12/20/StKE68JLRPgAexD.png"> </p>
+<p>4.Test Data<br>1.选择测试数据以确保每个DU对都已执行<br>2.测试数据选择要求测试工程师查看源代码，并选择可以让从每个定义到每个设置对象的路径都会被执行的输入参数值<br>3.预期输出来自于规范<br>4.最简单的办法是，最开始先任意组合输入input，跟着路径执行，然后列出所有覆盖的DU组合，直到所有的测试用例被覆盖   </p>
+<p>(这部分的操作实例比较复杂，建议直接看PDF)</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>1.DU-Pairtesting 提供对所有 Definition-Usepathsina 程序的全面测试<br>2.它是一种强大的测试形式，即它以程序中对数据进行操作的模式生成测试数据<br>3.<br><img src="https://s2.loli.net/2021/12/20/ZBSDFjafxLo7qTN.png"> </p>
+<p>4.对于引用对象或指针变量，很难确定引用了哪些变量<br>5.对于数组，很难确定数组中的哪个元素被引用(解决方案是将整个阵列视为一个变量)      </p>
+<h3 id="结构测试小结"><a href="#结构测试小结" class="headerlink" title="结构测试小结"></a>结构测试小结</h3><p><img src="https://s2.loli.net/2021/12/20/bW8YBTuJxAtZ7IN.png">     </p>
+<h1 id="Lecture12-突变测试-MutationTesting"><a href="#Lecture12-突变测试-MutationTesting" class="headerlink" title="Lecture12 突变测试 MutationTesting"></a>Lecture12 突变测试 MutationTesting</h1><h3 id="概念与简介"><a href="#概念与简介" class="headerlink" title="概念与简介"></a>概念与简介</h3><p>突变测试的概念与1970s首次被提出<br>在突变测试中，错误被<strong>故意</strong>引入到程序中<br>(通过创建程序的多个版本，每个版本都包含一个错误)<br>有缺陷的程序被称为原始程序的变种 mutants<br>突变体是通过对原始程序系统地应用突变操作 mutation operators 而产生的<br>(比如将原始的 if x &lt; 1 改为 if x = 1)   </p>
+<h3 id="突变操作-Mutation-Operators"><a href="#突变操作-Mutation-Operators" class="headerlink" title="突变操作 Mutation Operators"></a>突变操作 Mutation Operators</h3><p>一个突变操作被认为是一个从测试的软件中得到突变体的规则<br>突变操作的设计是为了防止那些程序员通常会放的错误<br>其取决于编程语言的特性  </p>
+<h3 id="突变测试的流程"><a href="#突变测试的流程" class="headerlink" title="突变测试的流程"></a>突变测试的流程</h3><p>1.为在测试中的程序构造突变体<br>-对原程序的每一个不同的修改作为一个突变体版本<br>-每个突变体只包含一个错误   </p>
+<p>2.生成测试用例和测试数据<br>-目前还没有一个公认的合适的方法来系统地生成测试数据<br>-其中有一种办法是，从查看会导致突变算子被触发的变量开始 </p>
+<p>3.将测试数据反馈给原始数据<br>-如果输出不正确，则修复程序并重新启动进程<br>-如果输出是正确的，则继续进行下一步 </p>
+<p>4.对于每一个突变体都进行测试数据    </p>
+<p>5.将每个突变体的输出与原始程序的输出进行比较<br>-如果输出是不同的，那么则代表突变体被测试数据”杀死”了<br>-如果它们是相同的，那么我们认为<strong>它们在功能上等同原始程序</strong>     </p>
+<p>6.目标是在执行了所有测试用例之后杀死所有的突变体    </p>
+<p>7.实际上，有许多自动测试的工具  </p>
+<h3 id="突变分数"><a href="#突变分数" class="headerlink" title="突变分数"></a>突变分数</h3><p>1.使用突变评分来衡量突变测试的有效性<br>2.一组测试数据的突变分数是该数据杀死的非等值突变体的百分比<br>-在这个例子中，总共有 9 个突变体，1 个等效的突变体和 8 个突变体被杀死<br>-给定测试数据的突变分数是8/9 = 0.89<br>3.如果其突变分数为100%，则该数据集被认为是充分的突变    </p>
+<h3 id="识别故障目标-Identifying-Fault-Targets"><a href="#识别故障目标-Identifying-Fault-Targets" class="headerlink" title="识别故障目标 Identifying Fault Targets"></a>识别故障目标 Identifying Fault Targets</h3><p>1.简单的故障目标主要基于潜在的输入错误<br>-往往被称为一个语句级突变<br>2.在更高级别，算法和软件接口是合适的目标<br>3.在面向对象的程序中，类的关系和类的相互作用是潜在的目标<br>-往往被称为一个类级突变 </p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><h1 id="Lecture13-面向对象的单元测试软件-Unit-Testing-Object-Oriented-Software"><a href="#Lecture13-面向对象的单元测试软件-Unit-Testing-Object-Oriented-Software" class="headerlink" title="Lecture13 面向对象的单元测试软件 Unit Testing Object-Oriented Software"></a>Lecture13 面向对象的单元测试软件 Unit Testing Object-Oriented Software</h1><h3 id="面向对象的测试模型"><a href="#面向对象的测试模型" class="headerlink" title="面向对象的测试模型"></a>面向对象的测试模型</h3><p><img src="https://s2.loli.net/2022/01/01/JuwgIYliUj38RX1.png"> </p>
+<h3 id="面向对象软件的特点"><a href="#面向对象软件的特点" class="headerlink" title="面向对象软件的特点"></a>面向对象软件的特点</h3><p>面向对象的设计是以类、继承和消息的概念为中心的<br>-类提供了一种打包数据（属性）和相关操作（方法）的机制<br>-继承为代码重用和共享公共功能提供了一种机制<br>-消息（方法调用）提供对象的外部接口 </p>
+<p>面向对象的设计特征为测试带来了额外的复杂性  </p>
+<h3 id="测试面向对象软件的注意事项"><a href="#测试面向对象软件的注意事项" class="headerlink" title="测试面向对象软件的注意事项"></a>测试面向对象软件的注意事项</h3><p>-类：对象保留状态；状态控制通常分布在整个程序中。状态控制错误很可能发生<br>-继承：动态绑定和复杂的继承结构容易出错<br>-信息：面向对象的程序通常有很多小的组件，因此有更多的接口。接口错误更容易发生   </p>
+<h3 id="面向对象的测试模型-1"><a href="#面向对象的测试模型-1" class="headerlink" title="面向对象的测试模型"></a>面向对象的测试模型</h3><p>面向对象软件的测试可以通过五个测试模型进行：<br>1.传统的<br>-使用接受他们所有输入的方法作为方法的参数并返回结果 </p>
+<p>2.组合的<br>-确保类在不同的输入组合，以不同的方法，下能正常工作 </p>
+<p>3.状态机<br>-所有具有属性的类都是独立的；我们的目标是实现全面覆盖，如状态转换   </p>
+<p>4.规格与设计<br>-根据设计规范和设计规范，使用统一建模语言（UML）图进行设计表达  </p>
+<p>5.内置测试<br>使用语言构建机制，比如Java中的Assertion </p>
+<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><p>所有常规的功能和结构技术都可以应用于类环境中的测试方法<br>-等价类测试、边界值分析测试、组合测试、随机测试、错误猜测<br>-语句覆盖、分支覆盖、决策覆盖、条件覆盖、路径覆盖和DU-Paris分析 </p>
+<p>测试用例将相同；关键区别在于测试数据    </p>
+<p>面向对象的设计特性必须格外小心:封装、继承、多态和消息序列和状态 </p>
+<h1 id="Lecture14-软件过程中的测试-Testing-in-the-Software-Process"><a href="#Lecture14-软件过程中的测试-Testing-in-the-Software-Process" class="headerlink" title="Lecture14 软件过程中的测试 Testing in the Software Process"></a>Lecture14 软件过程中的测试 Testing in the Software Process</h1><h3 id="软件测试方法-Software-Testing-Approaches"><a href="#软件测试方法-Software-Testing-Approaches" class="headerlink" title="软件测试方法 Software Testing Approaches"></a>软件测试方法 Software Testing Approaches</h3><p>1.The “BigBang” development<br>等待代码编写完成并测试完成的产品一次<br>测试活动不会阻碍完成产品的进度  </p>
+<p>这是一个冒险的策略<br>-产品运行的可能性可能很低，这取决于程序的大小和复杂性<br>-更难确定问题的根源 </p>
+<p>2.The ”Incremental” development<br>-测试单个模块或软件功能并编写它们<br>-新模块或功能以更好的质量构建在代码之上 </p>
+<h3 id="渐进式测试的步骤-The-Stages-of-Incremental-Testing"><a href="#渐进式测试的步骤-The-Stages-of-Incremental-Testing" class="headerlink" title="渐进式测试的步骤 The Stages of Incremental Testing"></a>渐进式测试的步骤 The Stages of Incremental Testing</h3><p><img src="https://s2.loli.net/2022/01/02/gvhSaWCsiTZodcV.png"> </p>
+<h3 id="软件开发生命周期"><a href="#软件开发生命周期" class="headerlink" title="软件开发生命周期"></a>软件开发生命周期</h3><p>软件开发生命周期是组织软件产品开发的结构化计划，也称为软件过程模型<br>软件过程模型描述了软件开发过程中发生的各种任务或活动的方法<br>随着软件项目的日益复杂化，这是必需的<br>非结构化方法将导致成本超支、延迟交付和质量不确定<br>结构化的方法使软件开发过程具有可重复性和可预测性，从而提高生产效率和质量<br>所有结构化方法（软件过程模型）都包括作为过程一部分的软件测试，但重点不同    </p>
+<h3 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h3><p><img src="https://s2.loli.net/2022/01/02/ykpecjYwVP6W8Zf.png"> </p>
+<h3 id="V模型"><a href="#V模型" class="headerlink" title="V模型"></a>V模型</h3><p><img src="https://s2.loli.net/2022/01/02/rHZ5itXBxoWm4Pw.png"> </p>
+<h3 id="渐进式和敏捷开发"><a href="#渐进式和敏捷开发" class="headerlink" title="渐进式和敏捷开发"></a>渐进式和敏捷开发</h3><p>敏捷软件开发的重点是在短时间内构建可发布的软件，通常以周为单位  </p>
+<p>它与敏捷宣言有关<br>-个人和交互高于处理和工具<br>-工作软件高于综合文档<br>-客户合作优于合同谈判<br>-响应变化而不是遵循计划 </p>
+<p>专业开发人员的需求发生了变化，这使得测试工程师的工作更加艰巨    </p>
+<h3 id="渐进式模型"><a href="#渐进式模型" class="headerlink" title="渐进式模型"></a>渐进式模型</h3><p><img src="https://s2.loli.net/2022/01/02/9eZ7z8YG5Cl1JBa.png"> </p>
+<h3 id="极限开发-XP"><a href="#极限开发-XP" class="headerlink" title="极限开发 XP"></a>极限开发 XP</h3><p>强调代码审查、持续集成、自动化测试、短文、实时沟通和团队合作<br>程序员负责测试他们自己的工作；测试工程师专注于帮助客户选择和编写功能测试，而不是定期运行测试    </p>
+<p>主要特点:<br>-沟通：与客户和程序员沟通<br>-简单：保持他们的设计简单和干净<br>-反馈：从一开始就通过软件测试获得反馈<br>-勇气：尽早将系统交付给客户，并建议进行补充更改 </p>
+<h3 id="Scrum"><a href="#Scrum" class="headerlink" title="Scrum"></a>Scrum</h3><p><img src="https://s2.loli.net/2022/01/02/ceaOfjQSJ97w4Vs.png"> </p>
+<p>Scrum 流程<br>Scrum是一种管理复杂软件项目的方法，也是Agiles软件开发的一种技巧<br>Scrum 从产品待办列表开始，它是产品需求的优先列表<br>-最有可能产生商业价值的项目位于顶部；列表分为建议的发布。<br>备忘录的内容来自于对项目结果感兴趣的每一个人<br>Scrum 团队在他们认为可以在几周内（通常是 30 天的迭代）内转化为产品功能增量的尽可能多的产品积压。这称为 Sprint<br>团队保持着一份在每个阶段要执行的任务清单，这被称为 “阶段性积压”<br>Sprint 的结果是一个可发布的工作软件。一个项目通常会有多个 Sprint    </p>
+<h3 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h3><p>DevOps指的是开发和运维的结合<br>DevOpsto 软件开发的主要驱动因素是：<br>-减少需求变更<br>-以测试和质量保证为重点<br>-以实现更快的交付周期<br>DevOps 尽可能依赖自动化工具 </p>
+<p><img src="https://s2.loli.net/2022/01/02/qOyQuxJlineSb7t.png"> </p>
+<h3 id="与过程相关的质量标准和模型"><a href="#与过程相关的质量标准和模型" class="headerlink" title="与过程相关的质量标准和模型"></a>与过程相关的质量标准和模型</h3><p><img src="https://s2.loli.net/2022/01/02/VXa4vBIF3b9WJOw.png"> </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">RetenQ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%89/">http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">RetenQ的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">MIEC生存手册</a><a class="post-meta__tags" href="/tags/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">cs265软件测试</a></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%80/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">cs265软件测试(一)</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%BA%8C/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">cs265软件测试(二)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%80/" title="cs265软件测试(一)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">cs265软件测试(一)</div></div></a></div><div><a href="/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%BA%8C/" title="cs265软件测试(二)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">cs265软件测试(二)</div></div></a></div><div><a href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">1.1 树：AVL的实现与分析，高级树简介</div></div></a></div><div><a href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">1.0 树：树的简介，二叉树的实现</div></div></a></div><div><a href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">2.1.0 排序算法：快速排序的实现</div></div></a></div><div><a href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">2.0 排序算法：归并排序</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s3.bmp.ovh/imgs/2022/02/f0f20e0f88b6eb94.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="author-info__name">RetenQ</div><div class="author-info__description">于是百无聊赖中写下了答案的最后一笔</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RetenQ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com//RetenQ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://twitter.com/RetenQ" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="mailto:RetenQ@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">你好！这里是某csse菜鸡的博客，有需要的话欢迎通过QQ或者Email联系我！ 3452567280 RetenQ@outlook.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture11-%E7%BB%93%E6%9E%84%E6%B5%8B%E8%AF%95%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%B5%81%E8%A6%86%E7%9B%96-Dataflow-Coverage"><span class="toc-number">1.</span> <span class="toc-text">Lecture11 结构测试——数据流覆盖 Dataflow Coverage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.0.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%BC%82%E5%B8%B8-Dataflow-Anomalies"><span class="toc-number">1.0.2.</span> <span class="toc-text">数据流异常 Dataflow Anomalies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-number">1.0.3.</span> <span class="toc-text">数据的定义和使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Definition-Clear-Paths"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">Definition-Clear Paths</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Definition-Use-Pair"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">Definition-Use Pair</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C"><span class="toc-number">1.0.4.</span> <span class="toc-text">执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.0.5.</span> <span class="toc-text">小结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E6%B5%8B%E8%AF%95%E5%B0%8F%E7%BB%93"><span class="toc-number">1.0.6.</span> <span class="toc-text">结构测试小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture12-%E7%AA%81%E5%8F%98%E6%B5%8B%E8%AF%95-MutationTesting"><span class="toc-number">2.</span> <span class="toc-text">Lecture12 突变测试 MutationTesting</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E4%B8%8E%E7%AE%80%E4%BB%8B"><span class="toc-number">2.0.1.</span> <span class="toc-text">概念与简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%81%E5%8F%98%E6%93%8D%E4%BD%9C-Mutation-Operators"><span class="toc-number">2.0.2.</span> <span class="toc-text">突变操作 Mutation Operators</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%81%E5%8F%98%E6%B5%8B%E8%AF%95%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-number">2.0.3.</span> <span class="toc-text">突变测试的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%81%E5%8F%98%E5%88%86%E6%95%B0"><span class="toc-number">2.0.4.</span> <span class="toc-text">突变分数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%86%E5%88%AB%E6%95%85%E9%9A%9C%E7%9B%AE%E6%A0%87-Identifying-Fault-Targets"><span class="toc-number">2.0.5.</span> <span class="toc-text">识别故障目标 Identifying Fault Targets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="toc-number">2.0.6.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture13-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6-Unit-Testing-Object-Oriented-Software"><span class="toc-number">3.</span> <span class="toc-text">Lecture13 面向对象的单元测试软件 Unit Testing Object-Oriented Software</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.0.1.</span> <span class="toc-text">面向对象的测试模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">3.0.2.</span> <span class="toc-text">面向对象软件的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.0.3.</span> <span class="toc-text">测试面向对象软件的注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B-1"><span class="toc-number">3.0.4.</span> <span class="toc-text">面向对象的测试模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-2"><span class="toc-number">3.0.5.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture14-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E6%B5%8B%E8%AF%95-Testing-in-the-Software-Process"><span class="toc-number">4.</span> <span class="toc-text">Lecture14 软件过程中的测试 Testing in the Software Process</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95-Software-Testing-Approaches"><span class="toc-number">4.0.1.</span> <span class="toc-text">软件测试方法 Software Testing Approaches</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%B5%8B%E8%AF%95%E7%9A%84%E6%AD%A5%E9%AA%A4-The-Stages-of-Incremental-Testing"><span class="toc-number">4.0.2.</span> <span class="toc-text">渐进式测试的步骤 The Stages of Incremental Testing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">4.0.3.</span> <span class="toc-text">软件开发生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.0.4.</span> <span class="toc-text">瀑布模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#V%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.0.5.</span> <span class="toc-text">V模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%90%E8%BF%9B%E5%BC%8F%E5%92%8C%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91"><span class="toc-number">4.0.6.</span> <span class="toc-text">渐进式和敏捷开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%90%E8%BF%9B%E5%BC%8F%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.0.7.</span> <span class="toc-text">渐进式模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E9%99%90%E5%BC%80%E5%8F%91-XP"><span class="toc-number">4.0.8.</span> <span class="toc-text">极限开发 XP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrum"><span class="toc-number">4.0.9.</span> <span class="toc-text">Scrum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DevOps"><span class="toc-number">4.0.10.</span> <span class="toc-text">DevOps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E8%BF%87%E7%A8%8B%E7%9B%B8%E5%85%B3%E7%9A%84%E8%B4%A8%E9%87%8F%E6%A0%87%E5%87%86%E5%92%8C%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.0.11.</span> <span class="toc-text">与过程相关的质量标准和模型</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.1 树：AVL的实现与分析，高级树简介"/></a><div class="content"><a class="title" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介">1.1 树：AVL的实现与分析，高级树简介</a><time datetime="2022-04-19T12:27:00.000Z" title="发表于 2022-04-19 20:27:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.0 树：树的简介，二叉树的实现"/></a><div class="content"><a class="title" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现">1.0 树：树的简介，二叉树的实现</a><time datetime="2022-04-19T12:08:00.000Z" title="发表于 2022-04-19 20:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.1.0 排序算法：快速排序的实现"/></a><div class="content"><a class="title" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现">2.1.0 排序算法：快速排序的实现</a><time datetime="2022-04-18T18:08:00.000Z" title="发表于 2022-04-19 02:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.0 排序算法：归并排序"/></a><div class="content"><a class="title" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序">2.0 排序算法：归并排序</a><time datetime="2022-04-18T18:00:00.000Z" title="发表于 2022-04-19 02:00:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/10/Unity%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F(%E6%8E%A7%E5%88%B6)/" title="Unity对话控制系统"><img src="https://s2.loli.net/2022/03/10/sX9AGKuzZ2qe3b1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="Unity对话控制系统"/></a><div class="content"><a class="title" href="/2022/03/10/Unity%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F(%E6%8E%A7%E5%88%B6)/" title="Unity对话控制系统">Unity对话控制系统</a><time datetime="2022-03-10T13:30:33.000Z" title="发表于 2022-03-10 21:30:33">2022-03-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By RetenQ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%89/'
+    this.page.identifier = '2022/01/20/cs265软件测试_三/'
+    this.page.title = 'cs265软件测试(三)'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

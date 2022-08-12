@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>cs265软件测试(一) | RetenQ的博客</title><meta name="keywords" content="MIEC生存手册,cs265软件测试"><meta name="author" content="RetenQ"><meta name="copyright" content="RetenQ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="来自梅努斯国际工程学院的cs265即软件测试课程的相关笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cs265软件测试(一)">
+<meta property="og:url" content="http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%80/index.html">
+<meta property="og:site_name" content="RetenQ的博客">
+<meta property="og:description" content="来自梅努斯国际工程学院的cs265即软件测试课程的相关笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png">
+<meta property="article:published_time" content="2022-01-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-30T09:01:06.544Z">
+<meta property="article:author" content="RetenQ">
+<meta property="article:tag" content="MIEC生存手册">
+<meta property="article:tag" content="cs265软件测试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png"><link rel="shortcut icon" href="https://s2.loli.net/2022/01/12/FP23fqhJaZjYNLw.jpg"><link rel="canonical" href="http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'cs265软件测试(一)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-30 17:01:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s3.bmp.ovh/imgs/2022/02/f0f20e0f88b6eb94.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">RetenQ的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">cs265软件测试(一)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-19T16:00:00.000Z" title="发表于 2022-01-20 00:00:00">2022-01-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-30T09:01:06.544Z" title="更新于 2022-01-30 17:01:06">2022-01-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">MIEC生存手册</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="cs265软件测试(一)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Lecture0"><a href="#Lecture0" class="headerlink" title="Lecture0"></a>Lecture0</h1><h3 id="Module-Overview"><a href="#Module-Overview" class="headerlink" title="Module Overview"></a>Module Overview</h3><ol>
+<li>Principles of software testing               软件测试原理</li>
+<li>Program Inspections,Walkthroughs and Reviews 软件检查、演练与视图</li>
+<li>Mathematical foundation for testing          测试的数学基础</li>
+<li>Unit testing/object-oriented testing         单元测试，面向对象测试</li>
+<li>Test cased esign                             测试用例设计</li>
+<li>Integration,system and acceptance testing    集成、系统和验收测试</li>
+</ol>
+<h3 id="Fault-Error-Failure"><a href="#Fault-Error-Failure" class="headerlink" title="Fault,Error,Failure"></a>Fault,Error,Failure</h3><p>Fault:<br>    1.软件中错误的一个声明<br>    2.计算机程序中不正确的步骤、过程、数据定义<br>    3.可能导致对象发生错误的情况</p>
+<p>Error:<br>    1.系统的错误状态<br>    2.产生错误的人为操作</p>
+<p>Failure:<br>    1.终止系统执行所需功能的能力<br>    2.”违反合同”  </p>
+<h3 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h3><p>基于要求和规范<br>不考虑软件的内部实现，只关心输入和结果的测试<br>根据规则书进行测试</p>
+<p>技术与操作:<br>1.等价类测试<br>2.边界值分析<br>3.组合测试<br>4.顺序测试<br>5.随机数据测试<br>6.错误猜测  </p>
+<h3 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h3><p>关心软件的内部实现，关心内部代码中是哪个地方出现了问题<br>根据代码的细节进行测试<br>（要求的编程能力显然比黑盒高）<br>技术与操作：<br>1.语句覆盖<br>2.决策覆盖<br>3.条件覆盖<br>4.路径覆盖<br>5.数据流覆盖  </p>
+<h1 id="Lecture-1"><a href="#Lecture-1" class="headerlink" title="Lecture 1"></a>Lecture 1</h1><h3 id="测试等级"><a href="#测试等级" class="headerlink" title="测试等级"></a>测试等级</h3><p><strong>单元测试 Unit Testing</strong>: 最简单的，往往只是一个界面，是最小的测试单元（再小就是“语句”了）<br><strong>集成测试 Integration Tesing</strong> : 简单来说就是几个单元合起来的测试<br><strong>系统测试 System Testing</strong> : 对整个软件产品，一个完整的环境（硬件，软件，网络…）的测试<br><strong>验收测试 Acceptance Testing</strong>: 最终的测试。它成功之后，就可以让用户接受这个软件了。(alpha测试，beta测试就属于这一块)  </p>
+<p><strong>回归测试 Regression Testing</strong>: 当一个新单元被添加，或一个单元被修改后，我们还需要再次测试  </p>
+<h3 id="错误故障分类"><a href="#错误故障分类" class="headerlink" title="错误故障分类"></a>错误故障分类</h3><h5 id="类型分类"><a href="#类型分类" class="headerlink" title="类型分类"></a>类型分类</h5><p>Logic：逻辑、判断、算法实现等<br>Interface：规格和结果实现等<br>Data：数据定义、初始化、映射、使用等</p>
+<h5 id="功能分类"><a href="#功能分类" class="headerlink" title="功能分类"></a>功能分类</h5><p>Wrong:实现错误<br>Missing:功能缺失<br>Extra:实现了不用实现的功能</p>
+<h5 id="严重性分类"><a href="#严重性分类" class="headerlink" title="严重性分类"></a>严重性分类</h5><p>Blocking:PENDING CORRECTION<br>Critical:错误操作不能避免，安全性问题等<br>Major:主要<br>Minor:次要<br>Inconsequential:无关紧要  </p>
+<h3 id="故障影响"><a href="#故障影响" class="headerlink" title="故障影响"></a>故障影响</h3><p>功能：某个功能无法满足<br>可运行：错误导致软件运行错误/不能很好操作<br>安全：授权。验证、批准、隐私<br>性能：准确率，容量，响应时间，有效性等<br>可服务性：可靠性,维护/修改的方便   </p>
+<h3 id="规格与需求"><a href="#规格与需求" class="headerlink" title="规格与需求"></a>规格与需求</h3><p>规格 Specification: 软件要依照什么标准<br>需求 Requirenment:  软件要实现什么功能  </p>
+<h3 id="软件测试的方法"><a href="#软件测试的方法" class="headerlink" title="软件测试的方法"></a>软件测试的方法</h3><h5 id="静态验证-Static-Verification"><a href="#静态验证-Static-Verification" class="headerlink" title="静态验证 Static Verification"></a>静态验证 Static Verification</h5><blockquote>
+<p>不运行的状态下，通过源代码，文档，说明书，数据等进行分析和验证（需要比较有经验的测试者）  </p>
+</blockquote>
+<p>走查 Walk throughs: 在脑内过一遍代码,了解规格，功能，查看源代码进行审核、匹配、报告<br>代码审查/审核 Code Reviews/Inspections:测试者理解相关文档，总览设计、计划、代码，利用走查验证。审查与解决错误 （比走查更加广泛）<br>形式化 Formal Methods : 用专门的软件，严格进行推导，证明等验证，比较费时间，但是质量比较高   </p>
+<h5 id="动态验证-Dynamic-Verfication"><a href="#动态验证-Dynamic-Verfication" class="headerlink" title="动态验证 Dynamic Verfication"></a>动态验证 Dynamic Verfication</h5><blockquote>
+<p>软件运行的状态下进行验证  </p>
+</blockquote>
+<h3 id="测试设计的过程"><a href="#测试设计的过程" class="headerlink" title="测试设计的过程"></a>测试设计的过程</h3><blockquote>
+<p>测试要干什么？  </p>
+</blockquote>
+<p>1.分析软件（从规格、代码，来分析组件、参数）<br>2.产生测试用例。最好该用例可以覆盖整个测试。每个用例需要有一个编号。<br>3.产生测试数据。输入值，期望输出(从规则书中分析得出)，测试用例的列表需要（最大程度）覆盖<br>4.执行测试。有一些软件可以完成这个步骤，输入数据，调用模块，即可得到结果</p>
+<h3 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h3><p>往往就是一个黑盒测试，测试用例和数据来自规范，测试也是面向规范，用测试的规范标准来做<br>功能测试/黑盒测试 在 所有等级的测试中都可以使用  </p>
+<h4 id="常见方法"><a href="#常见方法" class="headerlink" title="常见方法"></a>常见方法</h4><p>等价类测试<br>边界值测试<br>组合测试<br>随机数据测试<br>错误猜测/专家测试  </p>
+<h5 id="等价类测试"><a href="#等价类测试" class="headerlink" title="等价类测试"></a>等价类测试</h5><p>等价类测试主要是用来减少测试例数量的，用有限的数据代替无限的数据，且得到一个同等的效果<br>把输入域进行切分，输出范围也进行切分<br>对于每一个等价类，从中选择一个有代表性的值进行测试，如果这个值通过了测试，则可以认为等价类中的所有值通过测试  </p>
+<p>DEF1：一个等价类包含了一个数据的结果，它们要被同样的对待，出现同样的结果<br>DEF2:<br>假设：一个测试用例在测试中发现了问题，则认为等价类中的其它数据也会发现这个问题。测试通过同理</p>
+<h1 id="lecture-3"><a href="#lecture-3" class="headerlink" title="lecture 3"></a>lecture 3</h1><h3 id="边界值测试"><a href="#边界值测试" class="headerlink" title="边界值测试"></a>边界值测试</h3><p>边界值测试主要是为了发现那些处于分界点的数值可能发生问题  </p>
+<blockquote>
+<p>在发生分支语句测试的语句，会不会出错  </p>
+</blockquote>
+<p>如果在一个边界的两侧拥有边界值，则两个数都为边界值</p>
+<blockquote>
+<p>比如0及以下为A情况，1及以上是B情况。则0和1都是边界值，都需要测试  </p>
+</blockquote>
+<p>我们可以根据等价类测试的划分线得到一个或两个边界值<br>不过请注意：边界值不需要重复计算  </p>
+<p>在进行边界值测试时，依旧需要测试所有等价类  </p>
+<blockquote>
+<p>或者根据上面几点，我们可以说：边界值是根据等价类确定的  </p>
+</blockquote>
+<h3 id="边界值测试值的一般规则"><a href="#边界值测试值的一般规则" class="headerlink" title="边界值测试值的一般规则"></a>边界值测试值的一般规则</h3><p>1.每个输入输出的分界的边界值都是一个测试案例<br>2.输入的测试数据，是从多个未覆盖的测试情况中选出的<br>(没测试过的区域我肯定要挑一个代表啊)<br>3.每个测试用例，都应该尽可能涵盖多的测试情况，以确认整个等价类的边界值<br>4.对于无效等价类中的每个值，都应该单独处理<br>5.与返回值有关的测试案例都需要被覆盖<br>6.通常按顺序识别测试数据，并且为每个参数都尽可能挑选未覆盖的测试边界值  </p>
+<h3 id="确定边界值的一般准则"><a href="#确定边界值的一般准则" class="headerlink" title="确定边界值的一般准则"></a>确定边界值的一般准则</h3><p>A.对于一个连续范围的数值<br>1.为范围的边界创建测试案例(对输入和输出)<br>2.测试<strong>无效</strong>的输入值时，其数值刚刚超过边界  </p>
+<p>B.对于一系列离散的数值<br>1.为边界上的最大值和最小值，以及对于的上下值(比如大1,小1)创建测试用例(对输入和输出)</p>
+<p>C.对于有序集合<br>1.创建以第一个和最后一个元素为重点的测试案例  </p>
+<h3 id="边界测试的适用性以及局限性"><a href="#边界测试的适用性以及局限性" class="headerlink" title="边界测试的适用性以及局限性"></a>边界测试的适用性以及局限性</h3><p>1.可以大大减少测试案例的数量<br>2.适用于一定范围内的输入数据取值<br>3.可以应用于单元测试、集成测试、系统测试、验收测试<br>4.只要求输入和输出可以被划分且可以识别到边界<br>5.输入的组合可以不被测试    </p>
+<h1 id="lecture-4-5"><a href="#lecture-4-5" class="headerlink" title="lecture 4-5"></a>lecture 4-5</h1><h3 id="组合测试"><a href="#组合测试" class="headerlink" title="组合测试"></a>组合测试</h3><p>我们之前说到边界值不好测试”组合”的情况，组合值测试可以解决这个问题<br>(等价类测试也没有考虑”组合”的角度)  </p>
+<p>1.组合测试可以帮助我们测试”输入测试的组合情况”<br>2.可以用系统的办法进行测试(比如a和b都有t和f两种情况，就可以系统化进行组合)<br>3.因果图，决策表，真值表…都是我们配合组合测试的工具   </p>
+<p>1.以可能的组合，组成的最小的集合。考虑程序最多的可能性<br>2.有n个原因/条件，就有$2^n$个组合，再继续分析得到可的测试用例<br>3.以真值表的t、f来组合各种情况</p>
+<h3 id="因果关系"><a href="#因果关系" class="headerlink" title="因果关系"></a>因果关系</h3><p>识别所有输入软件和相关输出的组合<br>对软件的输入称为<strong>原因 Causes</strong>，相关的输出叫做<strong>结果 Effects</strong>    </p>
+<blockquote>
+<p>原因的组合将产生特定响应的结果，即effects</p>
+</blockquote>
+<p>这些原因和影响再描述其关系的真值表中，进行了结合    </p>
+<h3 id="目标组合测试-The-Goal-of-Combinational-Testing"><a href="#目标组合测试-The-Goal-of-Combinational-Testing" class="headerlink" title="目标组合测试 The Goal of Combinational Testing"></a>目标组合测试 The Goal of Combinational Testing</h3><p>目的是找到，能够完成测试的情况下，最有可能的组合的最小值<br>对于n个独立的原因，我们一共会有$2^n$个不同的组合<br><strong>原因和结果必须以布尔表达式的形式表达</strong>    </p>
+<h4 id="优化Cause的数量"><a href="#优化Cause的数量" class="headerlink" title="优化Cause的数量"></a>优化Cause的数量</h4><p>1.把复杂的关系分解成独立的部分<br>2.分组关系<br>3.按照数值大小分析<br>4.识别并消除重复、无用的cause<br>5.在每一次不同的的基本cause参数，都进行以上操作   </p>
+<h3 id="做真值表"><a href="#做真值表" class="headerlink" title="做真值表"></a>做真值表</h3><p>1.画出cause和effect的关系<br>2.对于每一个cause-effect，定义它们所测试的<strong>规则rule</strong><br>3.预测可能的输出<br><img src="https://i.loli.net/2021/10/15/pPf7IELsyK4aDrX.png"></p>
+<p>注意：<br>1.每个原因都在一个被分隔的行中<br>2.每个不同的列定义了有不同结构的组合<br>3.每个列都是一个规则rule<br>4.每个规则都是一个测试用例  </p>
+<p><img src="https://i.loli.net/2021/10/15/s9UJVhXb8tIxvQq.png"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>1.真值表中的各个规则用于识别所有可能的输入组合的输出值<br>2.特别的，错误案例不会在真值表中被覆盖，以此来减小它的尺寸<br>3.如果输入的组合会导致error,要使用一个单独的表格，只记录error的测试情况<br>4.尽可能的减少cause的数量，以此来减少表的大小<br>5.组合测试和有效地确认相关的原因</p>
+<h1 id="Lecture6-Random-Testing-amp-Error-Guessing-随机测试和错误猜测"><a href="#Lecture6-Random-Testing-amp-Error-Guessing-随机测试和错误猜测" class="headerlink" title="Lecture6 Random Testing &amp; Error Guessing 随机测试和错误猜测"></a>Lecture6 Random Testing &amp; Error Guessing 随机测试和错误猜测</h1><h2 id="随机测试"><a href="#随机测试" class="headerlink" title="随机测试"></a>随机测试</h2><p>随机生成的数据用作软件的输入</p>
+<blockquote>
+<p>搜索故障的概率方法</p>
+</blockquote>
+<blockquote>
+<p>以统计方式估计软件的质量</p>
+</blockquote>
+<p>1.分布可以是均匀的，也可以是模拟软件在实际使用中会收到的输入类型。<br>2.单元测试中使用的均匀分布的随机数据<br>3.随机数的统计相关分布常用于系统测试</p>
+<h3 id="TestCase"><a href="#TestCase" class="headerlink" title="TestCase"></a>TestCase</h3><p>1.目标是基于每个输入参数的假定使用模式实现对可能值的良好覆盖<br>2.每个测试用例由一组随机选择/生成的值表示，通常基于每个参数<br>3.每个测试用例都表示为特定参数的值分布.通常包括上限和下限以及用于在范围内选择随机值的分布。</p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>1.快速生成测试用例<br>2.可以提供一个数学基础来选择适当的输入值集<br>3.可能会对极端或非法数值的系数进行测试<br>4.如果不知道输入的分布情况，选择的输入值可能无法反映典型的使用情况</p>
+<h2 id="错误猜测"><a href="#错误猜测" class="headerlink" title="错误猜测"></a>错误猜测</h2><p>这是一种基于专家知识和经验的临时方法，又称专家意见 ExpertOpinion </p>
+<blockquote>
+<p>选择的测试数据有可能暴露实施中的缺陷  </p>
+</blockquote>
+<blockquote>
+<p>比如典型的:空/空字符串、未初始化列表、零分度、电池电量指示器超过 100%，当地面温度高于 120oF 时，客机不能起飞</p>
+</blockquote>
+<p>该技术非常有效，它专注于可能的故障。当然，如果使用不当，可能会出现故障。    </p>
+<h2 id="功能测试的总结-Functional-TestingSummary"><a href="#功能测试的总结-Functional-TestingSummary" class="headerlink" title="功能测试的总结 Functional TestingSummary"></a>功能测试的总结 Functional TestingSummary</h2><p>等价类测试：定义条件或错误类以帮助产生测试次数。Itassumes表示类内的代表值，也可以表示类内的销售值或条件。<br>边界值测试：测试搜索边条件等效类。<br>组合测试：组合效果的产品结构表多个参数。<br>随机测试：使用统计方法对软件质量进行评估。<br>错误猜测：基于直觉和专家知识的产品案例发现潜在的结果和设计焦点案例。  </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">RetenQ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%80/">http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%80/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">RetenQ的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">MIEC生存手册</a><a class="post-meta__tags" href="/tags/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">cs265软件测试</a></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/20/cs210%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E4%BA%8C/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">cs210算法与数据结构(二)</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%89/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">cs265软件测试(三)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%89/" title="cs265软件测试(三)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">cs265软件测试(三)</div></div></a></div><div><a href="/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%BA%8C/" title="cs265软件测试(二)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">cs265软件测试(二)</div></div></a></div><div><a href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">1.1 树：AVL的实现与分析，高级树简介</div></div></a></div><div><a href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">1.0 树：树的简介，二叉树的实现</div></div></a></div><div><a href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">2.1.0 排序算法：快速排序的实现</div></div></a></div><div><a href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">2.0 排序算法：归并排序</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s3.bmp.ovh/imgs/2022/02/f0f20e0f88b6eb94.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="author-info__name">RetenQ</div><div class="author-info__description">于是百无聊赖中写下了答案的最后一笔</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RetenQ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com//RetenQ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://twitter.com/RetenQ" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="mailto:RetenQ@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">你好！这里是某csse菜鸡的博客，有需要的话欢迎通过QQ或者Email联系我！ 3452567280 RetenQ@outlook.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture0"><span class="toc-number">1.</span> <span class="toc-text">Lecture0</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Module-Overview"><span class="toc-number">1.0.1.</span> <span class="toc-text">Module Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fault-Error-Failure"><span class="toc-number">1.0.2.</span> <span class="toc-text">Fault,Error,Failure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%91%E7%9B%92%E6%B5%8B%E8%AF%95"><span class="toc-number">1.0.3.</span> <span class="toc-text">黑盒测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95"><span class="toc-number">1.0.4.</span> <span class="toc-text">白盒测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture-1"><span class="toc-number">2.</span> <span class="toc-text">Lecture 1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%AD%89%E7%BA%A7"><span class="toc-number">2.0.1.</span> <span class="toc-text">测试等级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E6%95%85%E9%9A%9C%E5%88%86%E7%B1%BB"><span class="toc-number">2.0.2.</span> <span class="toc-text">错误故障分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%86%E7%B1%BB"><span class="toc-number">2.0.2.0.1.</span> <span class="toc-text">类型分类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E5%88%86%E7%B1%BB"><span class="toc-number">2.0.2.0.2.</span> <span class="toc-text">功能分类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%A5%E9%87%8D%E6%80%A7%E5%88%86%E7%B1%BB"><span class="toc-number">2.0.2.0.3.</span> <span class="toc-text">严重性分类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%85%E9%9A%9C%E5%BD%B1%E5%93%8D"><span class="toc-number">2.0.3.</span> <span class="toc-text">故障影响</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E6%A0%BC%E4%B8%8E%E9%9C%80%E6%B1%82"><span class="toc-number">2.0.4.</span> <span class="toc-text">规格与需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.5.</span> <span class="toc-text">软件测试的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E9%AA%8C%E8%AF%81-Static-Verification"><span class="toc-number">2.0.5.0.1.</span> <span class="toc-text">静态验证 Static Verification</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%AA%8C%E8%AF%81-Dynamic-Verfication"><span class="toc-number">2.0.5.0.2.</span> <span class="toc-text">动态验证 Dynamic Verfication</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-number">2.0.6.</span> <span class="toc-text">测试设计的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-number">2.0.7.</span> <span class="toc-text">功能测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.7.1.</span> <span class="toc-text">常见方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7%E7%B1%BB%E6%B5%8B%E8%AF%95"><span class="toc-number">2.0.7.1.1.</span> <span class="toc-text">等价类测试</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lecture-3"><span class="toc-number">3.</span> <span class="toc-text">lecture 3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E7%95%8C%E5%80%BC%E6%B5%8B%E8%AF%95"><span class="toc-number">3.0.1.</span> <span class="toc-text">边界值测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E7%95%8C%E5%80%BC%E6%B5%8B%E8%AF%95%E5%80%BC%E7%9A%84%E4%B8%80%E8%88%AC%E8%A7%84%E5%88%99"><span class="toc-number">3.0.2.</span> <span class="toc-text">边界值测试值的一般规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E8%BE%B9%E7%95%8C%E5%80%BC%E7%9A%84%E4%B8%80%E8%88%AC%E5%87%86%E5%88%99"><span class="toc-number">3.0.3.</span> <span class="toc-text">确定边界值的一般准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E7%95%8C%E6%B5%8B%E8%AF%95%E7%9A%84%E9%80%82%E7%94%A8%E6%80%A7%E4%BB%A5%E5%8F%8A%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">3.0.4.</span> <span class="toc-text">边界测试的适用性以及局限性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lecture-4-5"><span class="toc-number">4.</span> <span class="toc-text">lecture 4-5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E6%B5%8B%E8%AF%95"><span class="toc-number">4.0.1.</span> <span class="toc-text">组合测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E6%9E%9C%E5%85%B3%E7%B3%BB"><span class="toc-number">4.0.2.</span> <span class="toc-text">因果关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E7%BB%84%E5%90%88%E6%B5%8B%E8%AF%95-The-Goal-of-Combinational-Testing"><span class="toc-number">4.0.3.</span> <span class="toc-text">目标组合测试 The Goal of Combinational Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8C%96Cause%E7%9A%84%E6%95%B0%E9%87%8F"><span class="toc-number">4.0.3.1.</span> <span class="toc-text">优化Cause的数量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="toc-number">4.0.4.</span> <span class="toc-text">做真值表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">4.0.5.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture6-Random-Testing-amp-Error-Guessing-%E9%9A%8F%E6%9C%BA%E6%B5%8B%E8%AF%95%E5%92%8C%E9%94%99%E8%AF%AF%E7%8C%9C%E6%B5%8B"><span class="toc-number">5.</span> <span class="toc-text">Lecture6 Random Testing &amp; Error Guessing 随机测试和错误猜测</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%B5%8B%E8%AF%95"><span class="toc-number">5.1.</span> <span class="toc-text">随机测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TestCase"><span class="toc-number">5.1.1.</span> <span class="toc-text">TestCase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="toc-number">5.1.2.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E7%8C%9C%E6%B5%8B"><span class="toc-number">5.2.</span> <span class="toc-text">错误猜测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E7%9A%84%E6%80%BB%E7%BB%93-Functional-TestingSummary"><span class="toc-number">5.3.</span> <span class="toc-text">功能测试的总结 Functional TestingSummary</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.1 树：AVL的实现与分析，高级树简介"/></a><div class="content"><a class="title" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介">1.1 树：AVL的实现与分析，高级树简介</a><time datetime="2022-04-19T12:27:00.000Z" title="发表于 2022-04-19 20:27:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.0 树：树的简介，二叉树的实现"/></a><div class="content"><a class="title" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现">1.0 树：树的简介，二叉树的实现</a><time datetime="2022-04-19T12:08:00.000Z" title="发表于 2022-04-19 20:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.1.0 排序算法：快速排序的实现"/></a><div class="content"><a class="title" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现">2.1.0 排序算法：快速排序的实现</a><time datetime="2022-04-18T18:08:00.000Z" title="发表于 2022-04-19 02:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.0 排序算法：归并排序"/></a><div class="content"><a class="title" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序">2.0 排序算法：归并排序</a><time datetime="2022-04-18T18:00:00.000Z" title="发表于 2022-04-19 02:00:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/10/Unity%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F(%E6%8E%A7%E5%88%B6)/" title="Unity对话控制系统"><img src="https://s2.loli.net/2022/03/10/sX9AGKuzZ2qe3b1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="Unity对话控制系统"/></a><div class="content"><a class="title" href="/2022/03/10/Unity%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F(%E6%8E%A7%E5%88%B6)/" title="Unity对话控制系统">Unity对话控制系统</a><time datetime="2022-03-10T13:30:33.000Z" title="发表于 2022-03-10 21:30:33">2022-03-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By RetenQ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://example.com/2022/01/20/cs265%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95_%E4%B8%80/'
+    this.page.identifier = '2022/01/20/cs265软件测试_一/'
+    this.page.title = 'cs265软件测试(一)'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

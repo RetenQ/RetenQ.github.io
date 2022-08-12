@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>1.1 树：AVL的实现与分析，高级树简介 | RetenQ的博客</title><meta name="keywords" content="算法,MIEC生存手册,CS211算法与数据结构2"><meta name="author" content="RetenQ"><meta name="copyright" content="RetenQ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="进一步加入了AVL的介绍、实现原理、代码实现，以及初步记录了红黑树，展开树，B&#x2F;B+树。基于《数据结构与算法分析_Java实现》，以及一部分的MIEC课程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.1 树：AVL的实现与分析，高级树简介">
+<meta property="og:url" content="http://example.com/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/index.html">
+<meta property="og:site_name" content="RetenQ的博客">
+<meta property="og:description" content="进一步加入了AVL的介绍、实现原理、代码实现，以及初步记录了红黑树，展开树，B&#x2F;B+树。基于《数据结构与算法分析_Java实现》，以及一部分的MIEC课程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg">
+<meta property="article:published_time" content="2022-04-19T12:27:00.000Z">
+<meta property="article:modified_time" content="2022-04-19T12:30:38.764Z">
+<meta property="article:author" content="RetenQ">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="MIEC生存手册">
+<meta property="article:tag" content="CS211算法与数据结构2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2022/01/12/FP23fqhJaZjYNLw.jpg"><link rel="canonical" href="http://example.com/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '1.1 树：AVL的实现与分析，高级树简介',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-19 20:30:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s3.bmp.ovh/imgs/2022/02/f0f20e0f88b6eb94.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">RetenQ的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">1.1 树：AVL的实现与分析，高级树简介</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-04-19T12:27:00.000Z" title="发表于 2022-04-19 20:27:00">2022-04-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-19T12:30:38.764Z" title="更新于 2022-04-19 20:30:38">2022-04-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">MIEC生存手册</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">算法与数据结构</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="1.1 树：AVL的实现与分析，高级树简介"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><h2 id="AVL"><a href="#AVL" class="headerlink" title="AVL"></a>AVL</h2><p>AVL（Adelson-Velsky and Landis）树是一种自平衡二叉搜索树<br>对于树中的每一个节点，左、右子树的高度最多只能相差1  </p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>搜索树上的大多数原始操作在O(h)时间内在高度为h树上运行,树的高度在一棵AVL树中，是O(lgN)   </p>
+<p>一棵AVL树是左右子树高度最大相差1的树(其中空树的高度定义为-1)<br>在高度为h的AVL树中，最少节点数S(h) = S(h-1) + S(h-2) + 1 ;h=0,S(h)=1;h=1,S(h)=2 </p>
+<h3 id="AVL的平衡，旋转"><a href="#AVL的平衡，旋转" class="headerlink" title="AVL的平衡，旋转"></a>AVL的平衡，旋转</h3><p>AVL是特殊化的二叉树，想要保证AVL的平衡，我们可以用到一种称为平衡的做法。<strong>是否进行平衡</strong>的问题由树之间的高度决定    </p>
+<h4 id="AVL的基础定义与高度计算"><a href="#AVL的基础定义与高度计算" class="headerlink" title="AVL的基础定义与高度计算"></a>AVL的基础定义与高度计算</h4><p>这里先给出AVL的基本定义以及高度计算 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//%AVL定义</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">AvlNode</span>&lt;<span class="title">AnyType</span>&gt;</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    AnyType elemenet ; </span><br><span class="line">    AvlNode&lt;AnyType&gt; left ; </span><br><span class="line">    AvlNode&lt;AnyType&gt; right ; </span><br><span class="line">    <span class="keyword">int</span> height ;</span><br><span class="line"></span><br><span class="line">    AvlNode(AnyType theElement)&#123;</span><br><span class="line">        <span class="keyword">this</span>(theElement,<span class="keyword">null</span>,<span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    AvlNode(AnyType theElement , AvlNode&lt;AnyType&gt; lt , AvlNode&lt;AnyType&gt; rt)&#123;</span><br><span class="line">        elemenet = theElement ; </span><br><span class="line">        left = lt ; </span><br><span class="line">        right = rt ; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>高度计算:   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//%AVL高度计算</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">theHeight</span><span class="params">(AvlNode&lt;AnyType&gt; t)</span></span>&#123;</span><br><span class="line">    <span class="comment">//返回高度，若满则-1</span></span><br><span class="line">    <span class="keyword">return</span> t == <span class="keyword">null</span> ? -<span class="number">1</span>:t.height ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h4><p>实质上，我们设这里有a这个节点，在插入后只有以下四种情况：<br>1.对a左儿子的左子树进行插入(左、左，同向)<br>2.对a左儿子的右子树进行插入(左、右，异向)<br>3.对a右儿子的右子树进行插入(右、右，同向)<br>4.对a右儿子的左子树进行插入(右、左，异向)   </p>
+<p>具体理论和原理比较长，见书P86-P91,总之：<br><strong>同向的情况用单旋转，异向的情况用双旋转</strong><br>代码实现如下：  </p>
+<h5 id="单旋转平衡-代码实现"><a href="#单旋转平衡-代码实现" class="headerlink" title="单旋转平衡(代码实现)"></a>单旋转平衡(代码实现)</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//% 单旋转</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">rotateWithLeftChild</span><span class="params">(AvlNode&lt;AnyType&gt; k2)</span></span>&#123;</span><br><span class="line">    AvlNode&lt;AnyType&gt; k1 = k2.left ; </span><br><span class="line">    k2.left = k1.right ;</span><br><span class="line">    k1.right = k2 ; </span><br><span class="line"></span><br><span class="line">    k2.height = Math.max(height(k2.left), height(k2.right)) + <span class="number">1</span> ;</span><br><span class="line">    k1.height = Math.max(height(k1.left), k2.height) + <span class="number">1</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> k1 ; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> AvlNode&lt;AnyType&gt; <span class="title">rotateWithRightChild</span><span class="params">(AvlNode&lt;AnyType&gt; k2)</span></span>&#123;</span><br><span class="line">    AvlNode&lt;AnyType&gt; k1 = k2.right ; </span><br><span class="line">    k2.right = k1.left ; </span><br><span class="line">    k1.left = k2 ; </span><br><span class="line"></span><br><span class="line">    k2.height = Math.max(height(k2.left), height(k2.right)) + <span class="number">1</span> ;</span><br><span class="line">    k1.height = Math.max(height(k1.right),k2.height) + <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">return</span> k1 ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="双旋转平衡-代码实现"><a href="#双旋转平衡-代码实现" class="headerlink" title="双旋转平衡(代码实现)"></a>双旋转平衡(代码实现)</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//% 双旋转</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> AvlNode&lt;AnyType&gt; <span class="title">doubleWithLeftChild</span><span class="params">(AvlNode&lt;AnyType&gt; k3)</span></span>&#123;</span><br><span class="line">    k3.left = rotateWithRightChild(k3.left) ; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rotateWithLeftChild(k3) ; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> AvlNode&lt;AnyType&gt; <span class="title">doubleWithRightChild</span><span class="params">(AvlNode&lt;AnyType&gt; k3)</span></span>&#123;</span><br><span class="line">    k3.left = rotateWithLeftChild(k3.left) ; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rotateWithRightChild(k3) ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="AVL的插入和平衡"><a href="#AVL的插入和平衡" class="headerlink" title="AVL的插入和平衡"></a>AVL的插入和平衡</h3><p>AVL的核心就在于<strong>在插入之后会进行一次对树的平衡</strong>，具体做法已经在上一部分说过了，这里直接给出对应代码   </p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//% 插入</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> AvlNode&lt;AnyType&gt; <span class="title">insert</span> <span class="params">(AnyType x , AvlNode&lt;AnyType&gt; t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> AvlNode&lt;&gt;(x,<span class="keyword">null</span>,<span class="keyword">null</span>) ; </span><br><span class="line">        <span class="comment">//没有root的话，插入的第一个就是root</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//查找位置，下面部分同正常的二叉树</span></span><br><span class="line">    <span class="keyword">int</span> compareResult = x.compareTo(t.elemenet) ; </span><br><span class="line">    <span class="keyword">if</span>(compareResult &lt; <span class="number">0</span> )&#123;</span><br><span class="line">        t.left = insert(x,t.left);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(compareResult &gt; <span class="number">0</span> )&#123;</span><br><span class="line">        t.right = insert(x,t.right);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> blance(t) ; <span class="comment">//返回的值是要重新平衡之后的树，平衡的方法见下面</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//% 平衡</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> ALLOWED_IMBAKANCE = <span class="number">1</span> ; <span class="comment">//平衡高度差，就是1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> AvlNode&lt;AnyType&gt; <span class="title">balance</span><span class="params">(AvlNode&lt;AnyType&gt; t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> t ; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//下面根据情况判断做单旋转还是双旋转，旋转的方法在blance方法后写出</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(height(t.left) - height(t.right) &gt; ALLOWED_IMBAKANCE)&#123;</span><br><span class="line">        <span class="keyword">if</span>(height(t.left.left) &gt;= height(t.left.right))&#123;</span><br><span class="line">            <span class="comment">//这里的“等于”是为了保证在对称情景（图4-33）的类似情景下，我们使用的是单旋转</span></span><br><span class="line">            t = rotateWithLeftChild(t);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            t = doubleWithLeftChild(t); </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(height(t.right)  - height(t.left) &gt; ALLOWED_IMBAKANCE)&#123;</span><br><span class="line">            <span class="keyword">if</span>(height(t.right.right) &gt;= height(t.right.left))&#123;</span><br><span class="line">            <span class="comment">//这里的“等于”是为了保证在对称情景（图4-33）的类似情景下，我们使用的是单旋转</span></span><br><span class="line">                t = rotateWithRightChild(t) ; </span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                t = doubleWithRightChild(t) ; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//更新</span></span><br><span class="line">    t.height = Math.max(height(t.left) , height(t.right)) + <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">return</span> t  ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="AVL的删除"><a href="#AVL的删除" class="headerlink" title="AVL的删除"></a>AVL的删除</h3><p>同前文，就是把插入改为删除，或者说“在二叉树原方法的基础上，最后加入平衡的步骤”<br>依旧是“寻值-&gt;操作/删除-&gt;再平衡-&gt;更新”   </p>
+<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//% 删除</span></span><br><span class="line"><span class="comment">//删除与插入是十分类似的</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> AvlNode&lt;AnyType&gt; <span class="title">remove</span><span class="params">(AnyType x , AvlNode&lt;AnyType&gt; t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> ; <span class="comment">//找不到就不进行操作</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这部分实质上就是在尝试寻找我们的x</span></span><br><span class="line">    <span class="keyword">int</span> compareResult = x.compareTo(t.elemenet);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(compareResult &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        t.left = remove(x,t.left) ; </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(compareResult &gt; <span class="number">0</span> )&#123;</span><br><span class="line">        t.right = remove(x,t.right) ; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//不大不小，而且不是null，那就是找到了。下面根据情况做删除处理  </span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(t.left != <span class="keyword">null</span> &amp;&amp; t.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="comment">//这里的处理同正常二叉树</span></span><br><span class="line">        t.elemenet = findMin(t.right).elemenet ; </span><br><span class="line">        t.right = remove(t.elemenet , t.right);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        t = (t.left != <span class="keyword">null</span>) ? t.left : t.right ; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//操作结束后平衡该树</span></span><br><span class="line">    <span class="keyword">return</span> balance(t) ; <span class="comment">//返回平衡后的结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>1.在AVL树中，对于树中的每个节点，左右子树的高度最多可以相差一个，即高度平衡。平衡是AVL的核心，毕竟是自平衡树<br>2.要删除的节点可以标记为已删除，因此不需要重新平衡<br>3.在平均情况和最坏情况下，搜索、插入和删除都需要 O(log_2 N) 时间<br>4.在某些情况下，AVL 树可能会偏重，导致性能相对较差  </p>
+<h2 id="高级树简介"><a href="#高级树简介" class="headerlink" title="高级树简介"></a>高级树简介</h2><p>下面写的树多归“高级数据结构”内容了，这里只作简介/应试要求   </p>
+<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><p>红黑树是 AVL 树的替代品，红黑树也是一种自平衡二叉搜索树<br>红背树的操作最坏情况下需要𝑂(lg𝑁)时间，红黑树的高度最多为2lg(𝑁+1)<br>红背树中的每个节点都需要<strong>一个额外的位来存储节点的颜色</strong>，可以是红色或黑色  </p>
+<p>红黑树确保从根到叶的路径<strong>不超过任何其他路径的两倍</strong>，因此树是近似平衡的    </p>
+<h4 id="基本性质与基本介绍"><a href="#基本性质与基本介绍" class="headerlink" title="基本性质与基本介绍"></a>基本性质与基本介绍</h4><p>1.每个节点都是红色或黑色<br>2.根root是黑色的<br>3.如果一个节点是红色的，它的两个子节点都将被涂成黑色<br>4.对于每个节点，从节点到后代叶子的<strong>所有简单路径都包含相同数量的黑色节点</strong>  </p>
+<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><p>插入的基本规则是：<br>1.只能定为红或黑，其中<strong>根和null节点必须是黑</strong><br>2.红节点的子节点必须是黑节点（这条结合步骤理解）<br>3.相同数量的黑色节点  </p>
+<p>步骤：<br>1.按照二叉搜索树中使用的插入规则插入节点<br>2.将新插入的节点涂成红色<br>3.如果违反规则，则<strong>从上到下修复颜色</strong>  </p>
+<h4 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h4><p>•红黑树是自平衡二叉搜索树<br>•每个节点需要一个额外的位来存储节点的颜色<br>•节点只能被着色为红色或黑色<br>•红黑树的开销相对较低插入<br>•在实践中，与 AVL 树相比，旋转发生的频率相对较低<br>•使用红黑树可以避免侧超权子树（普通的AVL是很容易发生偏移的）    </p>
+<h3 id="伸展树SplayTrees"><a href="#伸展树SplayTrees" class="headerlink" title="伸展树SplayTrees"></a>伸展树SplayTrees</h3><p>splay树保证从空树开始的任意M个连续树操作最多花费O（MlgN）时间<br>Splay树基于这样一个事实，即BST每次操作的O（N）最坏情况时间<strong>并不坏</strong>，只要它<strong>发生的频率相对较低</strong>,就是说不去把重点放在考虑处理最坏情况上，而是优化最坏情况发生的频率<br>splay树的基本思想是在一个节点被访问后，通过一系列的AVL树旋转将该节点推到根，在展开树中，如果一个节点很深，那么路径上有很多节点也比较深，通过展开我们可以使所有这些节点上的未来访问更快  </p>
+<h4 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h4><p>1.展开深度为 d 的节点 x 需要 𝜽(𝒅) 时间，即与访问 x 的时间成正比的时间   </p>
+<p>2.展开不仅将 x 移动到根，而且将访问路径上每个节点的深度大致减半 </p>
+<p>插入和删除节点需要 𝑶(𝐥𝐠𝑵) 摊销时间<br>在分析中，节点的电位可以是任意值，但是固定的    </p>
+<h3 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h3><p>渐近分析假设整个数据结构在计算机的主存中，当数据大小大于主存容量时，部分数据结构必须存储在磁盘上。如果发生这种情况，算法的渐进效率将变得毫无意义，因为磁盘访问比访问存储在内存中的数据慢得多。  </p>
+<p>B-tree 及其变体，如 B+-trees 和 B*-trees，是为了提高树操作的效率而开发的    </p>
+<h4 id="基本性质-1"><a href="#基本性质-1" class="headerlink" title="基本性质"></a>基本性质</h4><p>M 阶 B 树是 M 叉树<br>1.数据项存储在外部节点，每个内部节点最多存储 M-1 个密钥来指导搜索<br>2.密钥以非递减顺序存储<br>3.根要么是叶子，要么有 2 到 M 个子节点<br>4.所有内部节点（根节点除外）都有 M/2 和 M 个子节点<br>5.所有外部节点都处于相同深度，并且具有 L/2 和 L 之间的数据项    </p>
+<blockquote>
+<p>请注意，B 树有许多变体，每种变体的属性都略有不同。上述属性适用于 B-tree 的一种流行变体，称为 B+-tree  </p>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/04/17/8jImMUOudRrogDC.png"># 这是啥<br>整合了书和MIEC的内容    </p>
+<h1 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h1><p>同MIEC原笔记</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">RetenQ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/">http://example.com/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">RetenQ的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95/">算法</a><a class="post-meta__tags" href="/tags/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">MIEC生存手册</a><a class="post-meta__tags" href="/tags/CS211%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%842/">CS211算法与数据结构2</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/"><img class="next-cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">1.0 树：树的简介，二叉树的实现</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">1.0 树：树的简介，二叉树的实现</div></div></a></div><div><a href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">2.1.0 排序算法：快速排序的实现</div></div></a></div><div><a href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">2.0 排序算法：归并排序</div></div></a></div><div><a href="/2022/01/28/1.%E5%8F%8C%E6%8C%87%E9%92%88/" title="【算法】双指针与典型例题"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/17305abebdcff48f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-28</div><div class="title">【算法】双指针与典型例题</div></div></a></div><div><a href="/2022/01/28/2.%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="【算法】二分查找与典型例题"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/17305abebdcff48f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-28</div><div class="title">【算法】二分查找与典型例题</div></div></a></div><div><a href="/2022/01/28/3.%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="【算法】滑动窗口及其例题"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/17305abebdcff48f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-28</div><div class="title">【算法】滑动窗口及其例题</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s3.bmp.ovh/imgs/2022/02/f0f20e0f88b6eb94.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="author-info__name">RetenQ</div><div class="author-info__description">于是百无聊赖中写下了答案的最后一笔</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RetenQ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com//RetenQ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://twitter.com/RetenQ" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="mailto:RetenQ@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">你好！这里是某csse菜鸡的博客，有需要的话欢迎通过QQ或者Email联系我！ 3452567280 RetenQ@outlook.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AVL"><span class="toc-number">1.1.</span> <span class="toc-text">AVL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AVL%E7%9A%84%E5%B9%B3%E8%A1%A1%EF%BC%8C%E6%97%8B%E8%BD%AC"><span class="toc-number">1.1.2.</span> <span class="toc-text">AVL的平衡，旋转</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#AVL%E7%9A%84%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%E4%B8%8E%E9%AB%98%E5%BA%A6%E8%AE%A1%E7%AE%97"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">AVL的基础定义与高度计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">旋转</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8D%95%E6%97%8B%E8%BD%AC%E5%B9%B3%E8%A1%A1-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.2.2.1.</span> <span class="toc-text">单旋转平衡(代码实现)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8C%E6%97%8B%E8%BD%AC%E5%B9%B3%E8%A1%A1-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.2.2.2.</span> <span class="toc-text">双旋转平衡(代码实现)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AVL%E7%9A%84%E6%8F%92%E5%85%A5%E5%92%8C%E5%B9%B3%E8%A1%A1"><span class="toc-number">1.1.3.</span> <span class="toc-text">AVL的插入和平衡</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AVL%E7%9A%84%E5%88%A0%E9%99%A4"><span class="toc-number">1.1.4.</span> <span class="toc-text">AVL的删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.1.5.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">高级树简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="toc-number">1.2.1.</span> <span class="toc-text">红黑树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%E4%B8%8E%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">基本性质与基本介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E5%85%A5"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93-1"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%B8%E5%B1%95%E6%A0%91SplayTrees"><span class="toc-number">1.2.2.</span> <span class="toc-text">伸展树SplayTrees</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">基本性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B%E6%A0%91"><span class="toc-number">1.2.3.</span> <span class="toc-text">B树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8-1"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">基本性质</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">使用方式</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.1 树：AVL的实现与分析，高级树简介"/></a><div class="content"><a class="title" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介">1.1 树：AVL的实现与分析，高级树简介</a><time datetime="2022-04-19T12:27:00.000Z" title="发表于 2022-04-19 20:27:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.0 树：树的简介，二叉树的实现"/></a><div class="content"><a class="title" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现">1.0 树：树的简介，二叉树的实现</a><time datetime="2022-04-19T12:08:00.000Z" title="发表于 2022-04-19 20:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.1.0 排序算法：快速排序的实现"/></a><div class="content"><a class="title" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现">2.1.0 排序算法：快速排序的实现</a><time datetime="2022-04-18T18:08:00.000Z" title="发表于 2022-04-19 02:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.0 排序算法：归并排序"/></a><div class="content"><a class="title" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序">2.0 排序算法：归并排序</a><time datetime="2022-04-18T18:00:00.000Z" title="发表于 2022-04-19 02:00:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/10/Unity%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F(%E6%8E%A7%E5%88%B6)/" title="Unity对话控制系统"><img src="https://s2.loli.net/2022/03/10/sX9AGKuzZ2qe3b1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="Unity对话控制系统"/></a><div class="content"><a class="title" href="/2022/03/10/Unity%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F(%E6%8E%A7%E5%88%B6)/" title="Unity对话控制系统">Unity对话控制系统</a><time datetime="2022-03-10T13:30:33.000Z" title="发表于 2022-03-10 21:30:33">2022-03-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By RetenQ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://example.com/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/'
+    this.page.identifier = '2022/04/19/1.1 树：AVL的实现与分析，高级树简介/'
+    this.page.title = '1.1 树：AVL的实现与分析，高级树简介'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
