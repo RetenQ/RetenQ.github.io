@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>【基础C语言】五、字符串补充 | RetenQ的博客</title><meta name="keywords" content="C"><meta name="author" content="RetenQ"><meta name="copyright" content="RetenQ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="该部分主要是对于前两篇之后,对于字符串部分的补充说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【基础C语言】五、字符串补充">
+<meta property="og:url" content="http://example.com/2022/03/08/%E4%BA%94%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A5%E5%85%85/index.html">
+<meta property="og:site_name" content="RetenQ的博客">
+<meta property="og:description" content="该部分主要是对于前两篇之后,对于字符串部分的补充说明">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg">
+<meta property="article:published_time" content="2022-03-08T02:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-08T16:48:15.594Z">
+<meta property="article:author" content="RetenQ">
+<meta property="article:tag" content="C">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2022/01/12/FP23fqhJaZjYNLw.jpg"><link rel="canonical" href="http://example.com/2022/03/08/%E4%BA%94%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A5%E5%85%85/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【基础C语言】五、字符串补充',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-09 00:48:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="RetenQ的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/08/12/AzsRr7yUNo5Ibhg.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">RetenQ的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【基础C语言】五、字符串补充</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-08T02:00:00.000Z" title="发表于 2022-03-08 10:00:00">2022-03-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-08T16:48:15.594Z" title="更新于 2022-03-09 00:48:15">2022-03-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">语言学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【基础C语言】五、字符串补充"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="五、字符串补充"><a href="#五、字符串补充" class="headerlink" title="五、字符串补充"></a>五、字符串补充</h1><h2 id="基础补充"><a href="#基础补充" class="headerlink" title="基础补充"></a>基础补充</h2><h3 id="字符数组和字符串"><a href="#字符数组和字符串" class="headerlink" title="字符数组和字符串"></a>字符数组和字符串</h3><p>字符数组和字符串不同，在C语言中二者是不同的</p>
+<p>这是一个字符数组:<code>char word[] = &#123;&#39;H&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;,&#39;!&#39;&#125;</code><br>而这是一个字符串:<code>char word[] = &#123;&#39;H&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;,&#39;!&#39;,&#39;\0&#39;&#125;</code><br>二者的区别在于，我们在初始化该数组的过程中，用一个 <strong>\0</strong> 结尾<br>如此一来，字符串的单元总数会比字符数多一，也就是多了一个0   </p>
+<blockquote>
+<p>字符串是一个”字符数组”，而因为末尾的”\0”，它变成了C语言中的字符串 </p>
+</blockquote>
+<p>字符串以数组的形式存在，以数组或者指针的形式访问(更多时候是以指针的形式)    </p>
+<h4 id="字符串变量"><a href="#字符串变量" class="headerlink" title="字符串变量"></a>字符串变量</h4><p>表达一个变量是字符串，有以下写法:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *str = <span class="string">&quot;Hello&quot;</span> ; </span><br><span class="line"><span class="type">char</span> word[] = <span class="string">&quot;Hello&quot;</span> ; </span><br><span class="line"><span class="type">char</span> line[<span class="number">10</span>] = <span class="string">&quot;Hello&quot;</span> ; </span><br></pre></td></tr></table></figure>
+<p>用双引号括起来的部分，被称为字符串的<strong>字面量</strong><br>两个相连的字符串常量会被自动连起来  </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;这里是一个例子，&quot;</span></span><br><span class="line">        <span class="string">&quot;相邻的字符串会被自动连接&quot;</span>) ;</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串变量-1"><a href="#字符串变量-1" class="headerlink" title="字符串变量"></a>字符串变量</h2><h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>当我们定义了两个完全一样的字符串是s1和s2时，它们实际上位于同一地址<br>事实上，s1和s2指向的地方位于程序的<strong>代码段</strong>,而且这一部分的内容都是<strong>只读的</strong><br>也就是说，我们是无法在此修改字符串的    </p>
+<p><code>char* s = &quot;Hello , world!&quot; ; </code><br>此时s是一个指针，其初始化为指向一个字符串常量——而这个常量所在的地方是只读的区域 </p>
+<blockquote>
+<p>实际上s是const char* s ，由于历史原因，编译器接受不带const的写法。但是试图对s指向的字符串做写入则会导致严重后果       </p>
+</blockquote>
+<h4 id="修改数组"><a href="#修改数组" class="headerlink" title="修改数组"></a>修改数组</h4><p>如果想修改字符串，则应该应用数组来定义<br><code>char s[] = &quot;Hello , world!&quot; ; </code><br>而此时字符串的意义变为”所要的字符串就在此处”，而非char* s 表示的”指向了某个地方的字符串”        </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span> ;</span><br><span class="line">    <span class="type">char</span>* s = <span class="string">&quot;Hello , world!&quot;</span> ; </span><br><span class="line">    <span class="type">char</span> s3 [] = <span class="string">&quot;Hello , world!&quot;</span> ; </span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;&amp;i=%p&quot;</span> , &amp;i);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;s = %p \n&quot;</span> , s) ; </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;s3 = %p \n&quot;</span> , s3);</span><br><span class="line"></span><br><span class="line">    s3[<span class="number">0</span>] = <span class="string">&#x27;B&#x27;</span> ; </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;This Time, s3[0] = %c \n &quot;</span> , s3[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="区别总结"><a href="#区别总结" class="headerlink" title="区别总结"></a>区别总结</h4><p>指针： 不知道字符串具体位置，可以处理参数(数组作为参数时是和指针等同的)，可以动态分配空间<br>数组： 字符串就在当前位置，可以动态修改，作为本地变量空间自动被回收   </p>
+<p><strong>如果要处理一个字符串，就用指针</strong><br><strong>如果要构造一个字符串，就用数组</strong>      </p>
+<p>字符串可以表达为<code>char*</code>的形式，而<code>char*</code>不一定是字符串<br>其本意是指向字符串的指针，可能指向的是字符的数组        </p>
+<blockquote>
+<p>只有其所指的字符数组有结尾的0，才能认为它指向的是字符串       </p>
+</blockquote>
+<h2 id="字符串的输入输出"><a href="#字符串的输入输出" class="headerlink" title="字符串的输入输出"></a>字符串的输入输出</h2><h3 id="字符串赋值"><a href="#字符串赋值" class="headerlink" title="字符串赋值"></a>字符串赋值</h3><p>字符串的赋值实际上<strong>并没有产生新的字符串</strong>，只是让被赋值的指针指向了对应的区域</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *t = <span class="string">&quot;title&quot;</span> ; </span><br><span class="line"><span class="type">char</span> *s ; </span><br><span class="line">s = t ;</span><br></pre></td></tr></table></figure>
+<p>此处并没有产生新的字符串，而只是让指针s指向了t所指的字符串，对s的任何操作都是对t做的    </p>
+<h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> <span class="built_in">string</span>[<span class="number">8</span>] ; </span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span> , <span class="built_in">string</span>) ; </span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span> , <span class="built_in">string</span>) ; </span><br></pre></td></tr></table></figure>
+<p>scanf会读入一个单词，到<strong>空格,tab,回车为止</strong><br>scanf是不安全的，因为其不知道要读入的内容的长度 </p>
+<p>我们可以在<code>%</code>和<code>s</code>中间限定读取的数量<br><code>scanf(&quot;%7s&quot; , word) ; </code><br>这个数字表示了<strong>最多允许读入的字符的数量</strong>，这个数字应该比数组大小小1，因为字符串数组的末尾固定为0      </p>
+<blockquote>
+<p>另外，在声明字符串的时候，需要初始化为0以免出错     </p>
+</blockquote>
+<p>char buffer[100] &#x3D; “” ; 此时这是一个空字符串，而buffer[0] &#x3D;&#x3D; ‘\0’<br>char buffer[] &#x3D; “” ;  此时这个数组的长度只有1   </p>
+<h2 id="字符串数组与程序参数"><a href="#字符串数组与程序参数" class="headerlink" title="字符串数组与程序参数"></a>字符串数组与程序参数</h2><h3 id="字符串数组"><a href="#字符串数组" class="headerlink" title="字符串数组"></a>字符串数组</h3><p>有两种方式表示字符串数组</p>
+<h4 id="char-X"><a href="#char-X" class="headerlink" title="char[][X]"></a>char[][X]</h4><p>代表的是一个字符串数组，每一个字符串的大小至多为X(有X-1字符)<br>可以认为是把一个个“数组型的字符串”放置到了数组里面，比如<br>a[0] &#x3D;&#x3D; world\0<br>a[1] &#x3D;&#x3D; Hello\0</p>
+<h4 id="char-a"><a href="#char-a" class="headerlink" title="char* a[]"></a>char* a[]</h4><p>表示数组a[]里面存放了各个字符串(的地址)<br>a[0] -&gt;地址1 -&gt;指向”Hello\0”<br>a[1] -&gt;地址2 -&gt;指向”World\0”    </p>
+<p>两种方式是不一样的</p>
+<h3 id="程序参数"><a href="#程序参数" class="headerlink" title="程序参数"></a>程序参数</h3><p>可以作为<code>main</code>函数的参数，比如<br><code>int main(int argc , char const *argv[])</code><br>其中argv[0]是命令本身   </p>
+<blockquote>
+<p>当使用Unix的符号链接时，反映符号链接的名字    </p>
+</blockquote>
+<h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><h3 id="putchar"><a href="#putchar" class="headerlink" title="putchar"></a>putchar</h3><p><code>int puchar(int c) ; </code><br>向标准输出写一个字符<br>返回写了几个字符，EOF(-1)表示写失败 </p>
+<h3 id="getchar"><a href="#getchar" class="headerlink" title="getchar"></a>getchar</h3><p><code>int getchar(void) ; </code><br>从标准输入读入一个字符<br>返回类型是int是为了可以返回EOF(-1)  </p>
+<blockquote>
+<p>Window Ctrl-Z  Unix Ctrl-D</p>
+</blockquote>
+<h2 id="string-h"><a href="#string-h" class="headerlink" title="string.h"></a>string.h</h2><p>在string.h中，有许多帮助处理字符串的函数</p>
+<h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><p><strong>strlen</strong><br>size_t strlen(const char *s) ;<br>返回s的字符串长度，不包括结尾的0    </p>
+<p><strong>strcpy</strong><br>char * strcpy(char *restrict dst , const char *restrict src) ;<br>可以把<code>src</code>的字符串拷贝到<code>dst</code><br>在c99下，restrict表名src和dst不重叠<br>最终返回的是<code>dst</code><br>另外，参数中，注意第一个参数是目的地，第二个是源<br>目的地需要有足够空间    </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *dst = (<span class="type">char</span>*) <span class="built_in">malloc</span>(<span class="built_in">strlen</span>(src)+<span class="number">1</span>) ;</span><br><span class="line"><span class="comment">// +1是因为考虑末尾的0</span></span><br><span class="line"><span class="built_in">strcpy</span>(dst,src) ; </span><br></pre></td></tr></table></figure>
+
+<p>自主实现:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">myCpy</span><span class="params">(<span class="type">char</span>* dst , <span class="type">const</span> <span class="type">char</span>* src)</span>&#123;</span><br><span class="line">    <span class="type">char</span>* ret = dst ; </span><br><span class="line">    <span class="keyword">while</span>(*src != <span class="string">&#x27;\0&#x27;</span>)&#123;</span><br><span class="line">        *dst = *src ; </span><br><span class="line">        dst++ ; </span><br><span class="line">        src++ ; </span><br><span class="line">    <span class="comment">//或者 *dst++ = *src++ ; </span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    *dst = <span class="string">&#x27;\0&#x27;</span>  ;</span><br><span class="line">    <span class="keyword">return</span> ret ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>strcat</strong><br>char * strcat(char *restric s1 , const char *restrict s2) ;<br>把s2拷贝到s1的后面，接触成一个长的字符串<br>返回s1<br>s1需要有足够的空间  </p>
+<blockquote>
+<p>尽可能不要使用strcpy和strcat因为有安全问题，可以使用下面的安全版本    </p>
+</blockquote>
+<p>char * strncpy(char *restrict dst , const char *restrict src , sizr_t n) ;<br>chat * strcat(char *restrict s1 , const char *restrict s2 , size_t n) ;<br>int strncmp(const char *s1 , const char *s2 , size_t n );</p>
+<p>size_t n 参数表示了最多可以运输多少字符 </p>
+<p>int strncmp :判断前n个字符是否是xxx </p>
+<h3 id="字符串搜索函数"><a href="#字符串搜索函数" class="headerlink" title="字符串搜索函数"></a>字符串搜索函数</h3><p>char * strchr(const char *s , int c);<br>char * strrchr(const char *s , int c);<br>返回NULL表示没有找到<br>(前者是从左往右，后者是从右往左)    </p>
+<p>因为返回的是对应位置的指针，所以也可以尝试打印接下来的部分：    </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> s[] = <span class="string">&quot;hello&quot;</span> ; </span><br><span class="line"><span class="type">char</span> *p = <span class="built_in">strchr</span>(s,<span class="string">&#x27;l&#x27;</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s \n&quot;</span> , p );</span><br></pre></td></tr></table></figure>
+<p>最后结果会是”llo”<br>因此我们可以利用这个特性寻找第n个字符，比如：   </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> s[] = <span class="string">&quot;hello&quot;</span> ; </span><br><span class="line"><span class="type">char</span> *p =s <span class="built_in">strchr</span>(s,<span class="string">&#x27;l&#x27;</span>) ;</span><br><span class="line">p = strchur(p+<span class="number">1</span>,<span class="string">&#x27;l&#x27;</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s \n&quot;</span> , p );</span><br></pre></td></tr></table></figure>
+
+<h3 id="在字符串中寻找字符串"><a href="#在字符串中寻找字符串" class="headerlink" title="在字符串中寻找字符串"></a>在字符串中寻找字符串</h3><p>char * strstr(const char *s1 , const char *s2);<br>char * strcasestr(const char *s1 , const char *s2); &#x2F;&#x2F;相较前者，忽略大小写  </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">RetenQ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/03/08/%E4%BA%94%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A5%E5%85%85/">http://example.com/2022/03/08/%E4%BA%94%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A5%E5%85%85/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">RetenQ的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/08/%E5%85%AD%E3%80%81%E6%9E%9A%E4%B8%BE%EF%BC%8C%E7%BB%93%E6%9E%84%EF%BC%8C%E7%B1%BB%E5%9E%8B/"><img class="prev-cover" src="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【基础C语言】六、枚举,结构,类型</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/08/%E5%9B%9B%E3%80%81%E6%8C%87%E9%92%88%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2(%E4%B8%8B)/"><img class="next-cover" src="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【基础C语言】四、指针与字符串(下)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/03/07/%E4%B8%80%E3%80%81C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" title="【基础C语言】一、基础操作"><img class="cover" src="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-07</div><div class="title">【基础C语言】一、基础操作</div></div></a></div><div><a href="/2022/03/08/%E4%B8%89%E3%80%81%E6%8C%87%E9%92%88%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2(%E4%B8%8A)/" title="【基础C语言】三、指针与字符串(上)"><img class="cover" src="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-08</div><div class="title">【基础C语言】三、指针与字符串(上)</div></div></a></div><div><a href="/2022/03/08/%E4%B8%83%E3%80%81%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/" title="【基础C语言】七、其他内容"><img class="cover" src="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-08</div><div class="title">【基础C语言】七、其他内容</div></div></a></div><div><a href="/2022/03/07/%E4%BA%8C%E3%80%81C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%95%B0%E7%BB%84%E3%80%81%E5%87%BD%E6%95%B0%E3%80%81%E5%9F%BA%E7%A1%80%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95/" title="【基础C语言】二、C语言的数组、函数、基础搜索算法"><img class="cover" src="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-07</div><div class="title">【基础C语言】二、C语言的数组、函数、基础搜索算法</div></div></a></div><div><a href="/2022/03/08/%E5%85%AD%E3%80%81%E6%9E%9A%E4%B8%BE%EF%BC%8C%E7%BB%93%E6%9E%84%EF%BC%8C%E7%B1%BB%E5%9E%8B/" title="【基础C语言】六、枚举,结构,类型"><img class="cover" src="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-08</div><div class="title">【基础C语言】六、枚举,结构,类型</div></div></a></div><div><a href="/2022/03/08/%E5%9B%9B%E3%80%81%E6%8C%87%E9%92%88%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2(%E4%B8%8B)/" title="【基础C语言】四、指针与字符串(下)"><img class="cover" src="https://s2.loli.net/2022/03/07/Ncstf6qdIUK9QpL.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-08</div><div class="title">【基础C语言】四、指针与字符串(下)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/08/12/AzsRr7yUNo5Ibhg.png" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="author-info__name">RetenQ</div><div class="author-info__description">于是百无聊赖中写下了答案的最后一笔</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RetenQ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com//RetenQ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://twitter.com/RetenQ" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="mailto:RetenQ@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">你好！这里是某csse菜鸡的博客，有需要的话欢迎通过QQ或者Email联系我！ 3452567280 RetenQ@outlook.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A5%E5%85%85"><span class="toc-number">1.</span> <span class="toc-text">五、字符串补充</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%85"><span class="toc-number">1.1.</span> <span class="toc-text">基础补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.1.1.</span> <span class="toc-text">字符数组和字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">字符串变量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%98%E9%87%8F-1"><span class="toc-number">1.2.</span> <span class="toc-text">字符串变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80"><span class="toc-number">1.2.1.</span> <span class="toc-text">地址</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%B0%E7%BB%84"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">修改数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%E6%80%BB%E7%BB%93"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">区别总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="toc-number">1.3.</span> <span class="toc-text">字符串的输入输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%B5%8B%E5%80%BC"><span class="toc-number">1.3.1.</span> <span class="toc-text">字符串赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="toc-number">1.3.2.</span> <span class="toc-text">输入输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84%E4%B8%8E%E7%A8%8B%E5%BA%8F%E5%8F%82%E6%95%B0"><span class="toc-number">1.4.</span> <span class="toc-text">字符串数组与程序参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E7%BB%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">字符串数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#char-X"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">char[][X]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#char-a"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">char* a[]</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%8F%82%E6%95%B0"><span class="toc-number">1.4.2.</span> <span class="toc-text">程序参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">字符串函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#putchar"><span class="toc-number">1.5.1.</span> <span class="toc-text">putchar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getchar"><span class="toc-number">1.5.2.</span> <span class="toc-text">getchar</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#string-h"><span class="toc-number">1.6.</span> <span class="toc-text">string.h</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-number">1.6.1.</span> <span class="toc-text">常用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%90%9C%E7%B4%A2%E5%87%BD%E6%95%B0"><span class="toc-number">1.6.2.</span> <span class="toc-text">字符串搜索函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E5%AF%BB%E6%89%BE%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.6.3.</span> <span class="toc-text">在字符串中寻找字符串</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/12/hello-world/" title="Hello World"><img src="https://s3.bmp.ovh/imgs/2022/01/17305abebdcff48f.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/08/12/hello-world/" title="Hello World">Hello World</a><time datetime="2022-08-12T08:23:28.877Z" title="发表于 2022-08-12 16:23:28">2022-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.1 树：AVL的实现与分析，高级树简介"/></a><div class="content"><a class="title" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介">1.1 树：AVL的实现与分析，高级树简介</a><time datetime="2022-04-19T12:27:00.000Z" title="发表于 2022-04-19 20:27:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.0 树：树的简介，二叉树的实现"/></a><div class="content"><a class="title" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现">1.0 树：树的简介，二叉树的实现</a><time datetime="2022-04-19T12:08:00.000Z" title="发表于 2022-04-19 20:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.1.0 排序算法：快速排序的实现"/></a><div class="content"><a class="title" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现">2.1.0 排序算法：快速排序的实现</a><time datetime="2022-04-18T18:08:00.000Z" title="发表于 2022-04-19 02:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.0 排序算法：归并排序"/></a><div class="content"><a class="title" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序">2.0 排序算法：归并排序</a><time datetime="2022-04-18T18:00:00.000Z" title="发表于 2022-04-19 02:00:00">2022-04-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By RetenQ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

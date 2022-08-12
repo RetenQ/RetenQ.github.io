@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>cs210算法与数据结构(一) | RetenQ的博客</title><meta name="keywords" content="MIEC生存手册"><meta name="author" content="RetenQ"><meta name="copyright" content="RetenQ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="对于梅努斯国际工程学院的CS210课程，即算法与数据结构课程作的笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cs210算法与数据结构(一)">
+<meta property="og:url" content="http://example.com/2022/01/20/cs210%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E4%B8%80/index.html">
+<meta property="og:site_name" content="RetenQ的博客">
+<meta property="og:description" content="对于梅努斯国际工程学院的CS210课程，即算法与数据结构课程作的笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png">
+<meta property="article:published_time" content="2022-01-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-12T07:49:12.429Z">
+<meta property="article:author" content="RetenQ">
+<meta property="article:tag" content="MIEC生存手册">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png"><link rel="shortcut icon" href="https://s2.loli.net/2022/01/12/FP23fqhJaZjYNLw.jpg"><link rel="canonical" href="http://example.com/2022/01/20/cs210%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E4%B8%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'cs210算法与数据结构(一)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-12 15:49:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="RetenQ的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/08/12/AzsRr7yUNo5Ibhg.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">RetenQ的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">cs210算法与数据结构(一)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-19T16:00:00.000Z" title="发表于 2022-01-20 00:00:00">2022-01-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-12T07:49:12.429Z" title="更新于 2022-08-12 15:49:12">2022-08-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">MIEC生存手册</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="cs210算法与数据结构(一)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="CS210-lecture1"><a href="#CS210-lecture1" class="headerlink" title="CS210 lecture1"></a>CS210 lecture1</h1><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>在此，我们将学习“存储信息的有效结构” 和 “操作信息的便捷算法”，简单来说，就是学习数据结构和算法</p>
+<h3 id="预告"><a href="#预告" class="headerlink" title="预告"></a>预告</h3><p>将包含以下四个主要部分：<br><strong>Recursion递归</strong><br><strong>Data structures 数据结构</strong><br><strong>Algorithms算法</strong><br><strong>Analysis of algorithms算法分析</strong></p>
+<p>算法：A step-by-step procedure for solving a problem via a computational process  通过计算过程逐步解决问题的过程    </p>
+<blockquote>
+<p>阿兰-图灵终于在20世纪30年代成功地为 “算法 “提供了一个全面的定义：一个可以在图灵机上运行的程序<br>An algorithm is:1.A well-defined, step-by-step procedure 2.That is guaranteed to terminate</p>
+</blockquote>
+<p>程序：An implementation of an algorithm in some programming languages  一种算法在某些编程语言中的实现</p>
+<p>数据结构：A conceptual system for organizing the data needed to solve some problems 组织解决一些问题所需数据的概念系统</p>
+<h3 id="What-is-a-data-structure"><a href="#What-is-a-data-structure" class="headerlink" title="What is a data structure?"></a>What is a data structure?</h3><blockquote>
+<p>数据结构是组织信息的概念结构<br>换句话说，我们将学习使用不同的结构来存储数据  </p>
+</blockquote>
+<h3 id="What-is-an-algorithm"><a href="#What-is-an-algorithm" class="headerlink" title="What is an algorithm?"></a>What is an algorithm?</h3><blockquote>
+<p>一种算法是一种精确的逐步踏板，用于使用有限序列来解决问题   </p>
+</blockquote>
+<p>-一个明确界定的、逐步进行的程序<br>-保证能够终止  </p>
+<p>Analysis of algorithms  ：  分析可以告诉你一个算法的运行速度，以及它将需要多少空间  </p>
+<p>算法就像你的想法，程序就是它的实现  </p>
+<h1 id="Lecture2-Programming-Revision"><a href="#Lecture2-Programming-Revision" class="headerlink" title="Lecture2-Programming Revision"></a>Lecture2-Programming Revision</h1><p>该部分MD作为一些知识的补充  </p>
+<h3 id="变量-Variable"><a href="#变量-Variable" class="headerlink" title="变量  Variable"></a>变量  Variable</h3><blockquote>
+<p>变量是内存中某个位置的名称 Variable is a name for a location in memory </p>
+</blockquote>
+<p>变量分为两种变量：<br>1.原始变量Primitive :比如int和double，它们通常是小写字母<br>2.引用变量Reference :比如对象Object,它们通常以大写字母开头    </p>
+<p>我们可以在声明的时候给予变量一个初始值，当一个变量没有被初始化时。该变量的值是未定义的    </p>
+<h3 id="范围和垃圾回收-Scope-amp-garbage-collection"><a href="#范围和垃圾回收-Scope-amp-garbage-collection" class="headerlink" title="范围和垃圾回收 Scope &amp; garbage collection"></a>范围和垃圾回收 Scope &amp; garbage collection</h3><p>在成员方法 member function 内定义的变量是该函数的局部变量<br>最明显的就是for循环，里面定义的变量i,它的life time只存在于该函数中  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span> ; i&lt;<span class="number">50</span> ; i++)&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们的函数退出（或超出范围）时，局部变量就被销毁(garbage collected)<br>程序员不用担心”为范围外的对象&#x2F;变量取消分配内存”这件事   </p>
+<blockquote>
+<p>不像C和C++  </p>
+</blockquote>
+<h3 id="赋值-Assignment"><a href="#赋值-Assignment" class="headerlink" title="赋值 Assignment"></a>赋值 Assignment</h3><p>赋值语句更改变量的值,使用&#x3D;操作符    </p>
+<pre><code class="C">a = 33 ; 
+</code></pre>
+<p>我们已经做过多次这种事情了，它正规的定义就是：对右边的表达式求值，结果存储到左侧变量中   </p>
+<h3 id="原始变量Primitive-Types-基本-x2F-初始变量"><a href="#原始变量Primitive-Types-基本-x2F-初始变量" class="headerlink" title="原始变量Primitive Types (基本&#x2F;初始变量)"></a>原始变量Primitive Types (基本&#x2F;初始变量)</h3><p>在Java中有八大初始变量：<br>byte,short,int,long,float,double,char,boolean   </p>
+<h4 id="Bits-And-Bytes"><a href="#Bits-And-Bytes" class="headerlink" title="Bits And Bytes"></a>Bits And Bytes</h4><p>Bit:一个bit就是1或0（真或假），本质就是一个标志开关的旗子<br>Bype:一个byte以8个bit组成，比如：10110011</p>
+<blockquote>
+<p>1 Kilobyte kb&#x3D; about 1,000 bytes (1,024 to be precise)<br>1 Megabyte mb&#x3D; about 1,000,000 bytes (1,024 * 1,024)<br>1 Gigabyte gb&#x3D; about 1,000,000,000 bytes   </p>
+</blockquote>
+<p>在原始变量中，其大小如下：<br>int: -2147483648<del>2147483647,大小为4bytes<br>byte:-128</del>127,大小为1byte<br>short:-32768<del>32767,大小为2bytes<br>long:–9,223,372,036,854,775,808</del>9,223,372,036,854,775,807,大小为8bytes   </p>
+<p>double: +-$10^308$ ,有效小数约为15位，8bytes<br>float:  +-$10^38$ , 有效小数约为7位，4bytes<br>char:字符类型，表示Unicode编码方案中的代码单位，2bytes<br>boolean:判断正负，1bit  </p>
+<h3 id="Math-Class"><a href="#Math-Class" class="headerlink" title="Math Class"></a>Math Class</h3><h5 id="Math-round"><a href="#Math-round" class="headerlink" title="Math.round()"></a>Math.round()</h5><p>会把浮点数转换为最近的整数<br>Math.round( 11.5)&#x3D; 12<br>Math.round(-11.5)&#x3D; -11<br>Math.round( 11.46)&#x3D; 11<br>Math.round(-11.46)&#x3D; -11  </p>
+<h5 id="Math-pow-x-y-Math-sqrt-x"><a href="#Math-pow-x-y-Math-sqrt-x" class="headerlink" title="Math.pow(x,y)  Math.sqrt(x)"></a>Math.pow(x,y)  Math.sqrt(x)</h5><p>Math.pow(x,y) x的y次方<br>Math.sqrt(x)  根号x  </p>
+<h5 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h5><p>Math.exp(x)   $e^x$<br>Math.log(x)natural log<br>Math.sin(x), Math.cos(x), Math.tan(x)         sine, cosine, tangent (x in radian)<br>Math.min(x, y),Math.max(x, y)           minimum, maximum</p>
+<h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><h4 id="i-i"><a href="#i-i" class="headerlink" title="i++ ++i"></a>i++ ++i</h4><p>我们<code>int i = 1 ;</code><br>i++ 先赋值再运算，比如对于 a &#x3D; i++ , 我们先进行a &#x3D; i 计算，再运行i&#x3D;i+1,最终所得是 a&#x3D;&#x3D;1  </p>
+<p>++i 则是先运算再赋值，对于a &#x3D; ++i , 我们先进行 i &#x3D; i+1，再进行a &#x3D; i ,得到 a &#x3D;&#x3D; 2<br>(–同理)    </p>
+<h4 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h4><p><img src="https://s2.loli.net/2022/01/05/24cOCIukjZSFolt.png"> </p>
+<p><img src="https://s2.loli.net/2022/01/05/Y46hTIVRLPXtikC.png"> </p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>使用<code>==</code>比较字符的时候<br>上述测试旨在查看两个字符串变量是否引用同一个字符串对象<br>比较字符串使用<code> s1.equals(s2)</code><br>使用<code>s1.compareTo(s2)</code>的时候，会按照字典顺序来比较二者的值  </p>
+<blockquote>
+<p>If s1.compareTo(s2) &lt; 0 then the string s1 comes before  the string s2 in the dictionary  </p>
+</blockquote>
+<h1 id="Lecture3-Methods-and-Objects"><a href="#Lecture3-Methods-and-Objects" class="headerlink" title="Lecture3 Methods and Objects"></a>Lecture3 Methods and Objects</h1><h1 id="Lecture4-Arrays-and-Array-Algorithms"><a href="#Lecture4-Arrays-and-Array-Algorithms" class="headerlink" title="Lecture4 Arrays and Array Algorithms"></a>Lecture4 Arrays and Array Algorithms</h1><h3 id="String-API"><a href="#String-API" class="headerlink" title="String API"></a>String API</h3><p><img src="https://i.loli.net/2021/10/14/ovtJEbBOeCzpP43.png" alt="StringAPI"> </p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>public:它是public，这意味着它可以从任何地方运行<br>static:它是静态的，这意味着您不需要创建对象就可以使用它<br>void:它不会返回一个结果</p>
+<blockquote>
+<p>另外，Java程序可以接受字符串数组作为输入参数（String[]args）   </p>
+</blockquote>
+<p>abstract: Abstract是一个抽象方法为空的类（没有与这些方法相关联的代码）,它不能被实例化<br>final:表示了一个不能有子类的类<br>public:描述可以由任何其他包实例化或扩展的类 </p>
+<p>没有修饰符，则类是友好的 friendly（只能由同一包中的类实例化）</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>普通方法称为实例方法，因为它们对对象的特定实例进行操作<br>要使用这些方法，<strong>首先需要创建类的对象</strong>，然后调用该对象上的方法    </p>
+<p>而静态方法static methond可以在不创建对象的情况下自行运行    </p>
+<h3 id="Random"><a href="#Random" class="headerlink" title="Random"></a>Random</h3><p>Math.random() 提供大于等于0小于1的随机数<br>生成的随机数的返回值为double </p>
+<h3 id="Eratosthenes筛选获得素数"><a href="#Eratosthenes筛选获得素数" class="headerlink" title="Eratosthenes筛选获得素数"></a>Eratosthenes筛选获得素数</h3><p>1.创建一个布尔数组，其大小与你要检查的数字范围相一致<br>2.从2开始，将所有值设置为true<br>3.从插槽2中的元素开始，检查该插槽中的值是否为真–如果不是，则跳过它并转到下一个数字<br>4.现在循环数组的其余部分，并将插槽号为该插槽号倍数的每个元素设置为“false”<br>5.完成后，任何仍包含’true’的插槽必须是素数  </p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>封装 encapsulation  </p>
+<blockquote>
+<p>封装隐藏了所有不重要的细节    </p>
+</blockquote>
+<p>创建数组时，根据数组类型初始化所有值：<br>•数字：0<br>•布尔值：false<br>•对象引用：null </p>
+<p>二维数组：<br><img src="https://s2.loli.net/2022/01/05/levmZdSwpRuTogh.png"> </p>
+<p>Math.random（）提供&gt;&#x3D;0和&lt;1的随机数  </p>
+<h1 id="Lecture-5"><a href="#Lecture-5" class="headerlink" title="Lecture 5"></a>Lecture 5</h1><p>这部分建议还是看书理解  </p>
+<h3 id="计算法"><a href="#计算法" class="headerlink" title="计算法"></a>计算法</h3><p>使用大O的时候只关心最高项</p>
+<p>O(n):运行时间增加的速度与大小增加的速度成正比</p>
+<p>O(n^2):运行时间的增加与问题规模的平方成正比</p>
+<p>O(1):运行时间为常数 </p>
+<p>O(logN):时间以对数大小的速率缓慢增加    </p>
+<h3 id="程序计算大O"><a href="#程序计算大O" class="headerlink" title="程序计算大O"></a>程序计算大O</h3><p>无论问题的大小如何，都运行相同次数的语句只是常量<br>您所感兴趣的只是增加循环的大小，循环的迭代次数是怎么增加的      </p>
+<p>单个循环运行 n 次表示O(n)<br>每个运行 n 次的嵌套循环表示O(n^2)     </p>
+<p>注意观察运行的次数，而不是只看循环有几个嵌套<br><img src="https://s2.loli.net/2022/01/05/TNZYOPIloRBQ8qg.png"> </p>
+<h1 id="Lecture6"><a href="#Lecture6" class="headerlink" title="Lecture6"></a>Lecture6</h1><p>三种排序算法<br>它们的复杂度都是$O(n^2)$</p>
+<h3 id="冒泡排序-Bubble-Sort"><a href="#冒泡排序-Bubble-Sort" class="headerlink" title="冒泡排序 Bubble Sort"></a>冒泡排序 Bubble Sort</h3><p>从数组的开头开始<br>比较前两个数字<br>如果左边的一个更大，则将其与右边的一个交换<br>向右移动一个位置并检查接下来的两个•继续这样做直到到达数组的末尾<br>最大的数字现在已经“冒泡”到顶部<br>回到开头，重复上述的流程进行排序<br>在数组的顶部停止,就可以得到结果</p>
+<p><strong>示意图</strong><br><img src="https://i.loli.net/2021/10/24/4dVx3AhXSku5aYv.png" alt="示意图"></p>
+<p><strong>代码实现</strong><br><img src="https://i.loli.net/2021/10/24/wfD1Fn7jNb4szeU.png" alt="代码实现"></p>
+<h3 id="选择排序-Selection-Sort"><a href="#选择排序-Selection-Sort" class="headerlink" title="选择排序 Selection Sort"></a>选择排序 Selection Sort</h3><p>选择排序优化了<strong>交换</strong>的流程，虽然它的复杂度依旧是$O(n^2)$<br>但在一般情况下，它能够拥有比冒泡算法更短的运行时间  </p>
+<blockquote>
+<p>原因在于，在每一次”冒泡”中，我们都找到了某个最值，但在之后的计算中，我们依旧对它进行了比较<br>这导致我们花费了本不应该花费的时间</p>
+</blockquote>
+<p>于是，我们可以随着冒泡外循环的进行，减少外循环检查的范围</p>
+<p><strong>优化示意图</strong><br><img src="https://i.loli.net/2021/10/24/pKRrjJM61EcySzw.png" alt="优化示意图">    </p>
+<p>红色是已找到最值(这里是最小值)<br>蓝色是当前计算的对象<br>黄色是当前排序的范围    </p>
+<p><strong>代码实现</strong><br><img src="https://i.loli.net/2021/10/24/ZuUprahxW9yEo5J.png" alt="代码实现"></p>
+<h3 id="插入排序-Insertion-Sort"><a href="#插入排序-Insertion-Sort" class="headerlink" title="插入排序 Insertion Sort"></a>插入排序 Insertion Sort</h3><p>虽然复杂度还是$O(n^2)$，但是速度比前三种<strong>更</strong>快    </p>
+<blockquote>
+<p>一般而言，我们会把插入排序用在其它排序法的<strong>最后阶段</strong>，比如快速排序  </p>
+</blockquote>
+<p>在快速排序中，我们不再使用<strong>交换</strong>，而是将元素向上移动来“腾出空间”<br>其核心思想在于<strong>把已经排序好的数放在左侧</strong>  </p>
+<p><strong>示意图</strong><br><img src="https://i.loli.net/2021/10/24/ios3ueYfXxbDCZV.png"></p>
+<p>部分待排序列表（黑色）最初只包含列表中的第一个元素<br>每次迭代都会从“尚未检查订单”输入数据中删除一个元素（红色）<br>然后会使用这个元素到左侧区域比较大小<br>最终插入到排序列表中</p>
+<p><strong>代码实现</strong><br><img src="https://i.loli.net/2021/10/24/ov5QWeKJSyPbh7s.png"></p>
+<blockquote>
+<p>对于逆序排列的数据，运行速度不会比冒泡排序快</p>
+</blockquote>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><strong>冒泡排序</strong><br>    通过每次交换将最大的冒泡到末尾<br><strong>选择排序</strong><br>    选择最小值并将该元素交换到开头<br><strong>插入排序</strong><br>    查找元素应在排序部分中的位置并将所有元素向上移动到腾出空间  </p>
+<blockquote>
+<p>三者的复杂度都是&amp;O(n^2)$  </p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">RetenQ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/01/20/cs210%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E4%B8%80/">http://example.com/2022/01/20/cs210%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E4%B8%80/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">RetenQ的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MIEC%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">MIEC生存手册</a></div><div class="post_share"><div class="social-share" data-image="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/20/cs210%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E4%B8%89/"><img class="prev-cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">cs210算法与数据结构(三)</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/20/cs210%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E4%BA%8C/"><img class="next-cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">cs210算法与数据结构(二)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">1.0 树：树的简介，二叉树的实现</div></div></a></div><div><a href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">1.1 树：AVL的实现与分析，高级树简介</div></div></a></div><div><a href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">2.0 排序算法：归并排序</div></div></a></div><div><a href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现"><img class="cover" src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-19</div><div class="title">2.1.0 排序算法：快速排序的实现</div></div></a></div><div><a href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_PgSQL%E9%83%A8%E5%88%86_%E4%B8%8B/" title="cs130数据库:PgSql模块(下)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">cs130数据库:PgSql模块(下)</div></div></a></div><div><a href="/2022/01/20/cs130%E6%95%B0%E6%8D%AE%E5%BA%93_PgSQL%E9%83%A8%E5%88%86_%E4%B8%8A/" title="cs130数据库:PgSql模块(上)"><img class="cover" src="https://s3.bmp.ovh/imgs/2022/01/18b99187f35c6af0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-20</div><div class="title">cs130数据库:PgSql模块(上)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/08/12/AzsRr7yUNo5Ibhg.png" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="author-info__name">RetenQ</div><div class="author-info__description">于是百无聊赖中写下了答案的最后一笔</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">55</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RetenQ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com//RetenQ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://twitter.com/RetenQ" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="mailto:RetenQ@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">你好！这里是某csse菜鸡的博客，有需要的话欢迎通过QQ或者Email联系我！ 3452567280 RetenQ@outlook.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CS210-lecture1"><span class="toc-number">1.</span> <span class="toc-text">CS210 lecture1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.0.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E5%91%8A"><span class="toc-number">1.0.2.</span> <span class="toc-text">预告</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-a-data-structure"><span class="toc-number">1.0.3.</span> <span class="toc-text">What is a data structure?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-an-algorithm"><span class="toc-number">1.0.4.</span> <span class="toc-text">What is an algorithm?</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture2-Programming-Revision"><span class="toc-number">2.</span> <span class="toc-text">Lecture2-Programming Revision</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F-Variable"><span class="toc-number">2.0.1.</span> <span class="toc-text">变量  Variable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%9B%B4%E5%92%8C%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6-Scope-amp-garbage-collection"><span class="toc-number">2.0.2.</span> <span class="toc-text">范围和垃圾回收 Scope &amp; garbage collection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC-Assignment"><span class="toc-number">2.0.3.</span> <span class="toc-text">赋值 Assignment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%A7%8B%E5%8F%98%E9%87%8FPrimitive-Types-%E5%9F%BA%E6%9C%AC-x2F-%E5%88%9D%E5%A7%8B%E5%8F%98%E9%87%8F"><span class="toc-number">2.0.4.</span> <span class="toc-text">原始变量Primitive Types (基本&#x2F;初始变量)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Bits-And-Bytes"><span class="toc-number">2.0.4.1.</span> <span class="toc-text">Bits And Bytes</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Math-Class"><span class="toc-number">2.0.5.</span> <span class="toc-text">Math Class</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Math-round"><span class="toc-number">2.0.5.0.1.</span> <span class="toc-text">Math.round()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Math-pow-x-y-Math-sqrt-x"><span class="toc-number">2.0.5.0.2.</span> <span class="toc-text">Math.pow(x,y)  Math.sqrt(x)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-number">2.0.5.0.3.</span> <span class="toc-text">其它</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">2.0.6.</span> <span class="toc-text">操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#i-i"><span class="toc-number">2.0.6.1.</span> <span class="toc-text">i++ ++i</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">2.0.6.2.</span> <span class="toc-text">数学运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">2.0.6.3.</span> <span class="toc-text">字符串</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture3-Methods-and-Objects"><span class="toc-number">3.</span> <span class="toc-text">Lecture3 Methods and Objects</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture4-Arrays-and-Array-Algorithms"><span class="toc-number">4.</span> <span class="toc-text">Lecture4 Arrays and Array Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-API"><span class="toc-number">4.0.1.</span> <span class="toc-text">String API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">4.0.2.</span> <span class="toc-text">修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">4.0.3.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Random"><span class="toc-number">4.0.4.</span> <span class="toc-text">Random</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Eratosthenes%E7%AD%9B%E9%80%89%E8%8E%B7%E5%BE%97%E7%B4%A0%E6%95%B0"><span class="toc-number">4.0.5.</span> <span class="toc-text">Eratosthenes筛选获得素数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-number">4.0.6.</span> <span class="toc-text">补充</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture-5"><span class="toc-number">5.</span> <span class="toc-text">Lecture 5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%B3%95"><span class="toc-number">5.0.1.</span> <span class="toc-text">计算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%A1%E7%AE%97%E5%A4%A7O"><span class="toc-number">5.0.2.</span> <span class="toc-text">程序计算大O</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture6"><span class="toc-number">6.</span> <span class="toc-text">Lecture6</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-Bubble-Sort"><span class="toc-number">6.0.1.</span> <span class="toc-text">冒泡排序 Bubble Sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-Selection-Sort"><span class="toc-number">6.0.2.</span> <span class="toc-text">选择排序 Selection Sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-Insertion-Sort"><span class="toc-number">6.0.3.</span> <span class="toc-text">插入排序 Insertion Sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">6.0.4.</span> <span class="toc-text">小结</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/12/hello-world/" title="Hello World"><img src="https://s3.bmp.ovh/imgs/2022/01/17305abebdcff48f.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/08/12/hello-world/" title="Hello World">Hello World</a><time datetime="2022-08-12T08:23:28.877Z" title="发表于 2022-08-12 16:23:28">2022-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.1 树：AVL的实现与分析，高级树简介"/></a><div class="content"><a class="title" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介">1.1 树：AVL的实现与分析，高级树简介</a><time datetime="2022-04-19T12:27:00.000Z" title="发表于 2022-04-19 20:27:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.0 树：树的简介，二叉树的实现"/></a><div class="content"><a class="title" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现">1.0 树：树的简介，二叉树的实现</a><time datetime="2022-04-19T12:08:00.000Z" title="发表于 2022-04-19 20:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.1.0 排序算法：快速排序的实现"/></a><div class="content"><a class="title" href="/2022/04/19/2.1.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="2.1.0 排序算法：快速排序的实现">2.1.0 排序算法：快速排序的实现</a><time datetime="2022-04-18T18:08:00.000Z" title="发表于 2022-04-19 02:08:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="2.0 排序算法：归并排序"/></a><div class="content"><a class="title" href="/2022/04/19/2.0%20%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%9A%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="2.0 排序算法：归并排序">2.0 排序算法：归并排序</a><time datetime="2022-04-18T18:00:00.000Z" title="发表于 2022-04-19 02:00:00">2022-04-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By RetenQ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
