@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MissingSemester(2)VIM基础操作 | RetenQ的博客</title><meta name="keywords" content="shell,bash"><meta name="author" content="RetenQ"><meta name="copyright" content="RetenQ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="VIM基础操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MissingSemester(2)VIM基础操作">
+<meta property="og:url" content="http://example.com/2022/08/15/MissingSemester(2)VIM%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="RetenQ的博客">
+<meta property="og:description" content="VIM基础操作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/08/15/YneZqjNl2MbSymc.jpg">
+<meta property="article:published_time" content="2022-08-15T04:01:33.000Z">
+<meta property="article:modified_time" content="2022-08-15T07:29:29.699Z">
+<meta property="article:author" content="RetenQ">
+<meta property="article:tag" content="shell,bash">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/08/15/YneZqjNl2MbSymc.jpg"><link rel="shortcut icon" href="https://s2.loli.net/2022/01/12/FP23fqhJaZjYNLw.jpg"><link rel="canonical" href="http://example.com/2022/08/15/MissingSemester(2)VIM%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MissingSemester(2)VIM基础操作',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-15 15:29:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="RetenQ的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s2.loli.net/2022/08/12/AzsRr7yUNo5Ibhg.png" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2022/08/15/YneZqjNl2MbSymc.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">RetenQ的博客</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">MissingSemester(2)VIM基础操作</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-15T04:01:33.000Z" title="发表于 2022-08-15 12:01:33">2022-08-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-15T07:29:29.699Z" title="更新于 2022-08-15 15:29:29">2022-08-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MissingSemester/">MissingSemester</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MissingSemester(2)VIM基础操作"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="MissingSemester-2-VIM基础操作"><a href="#MissingSemester-2-VIM基础操作" class="headerlink" title="MissingSemester(2)VIM基础操作"></a>MissingSemester(2)VIM基础操作</h1><blockquote>
+<p>Vim 是一个_多模态_编辑 器：它对于插入文字和操纵文字有不同的模式。Vim 是可编程的（可以使用 Vimscript 或者像 Python 一样的其他程序语言），Vim 的接口本身也是一个程序语言：键入操作（以及其助记名） 是命令，这些命令也是可组合的。Vim 避免了使用鼠标，因为那样太慢了；Vim 甚至避免用 上下左右键  </p>
+</blockquote>
+<h2 id="模式与简介"><a href="#模式与简介" class="headerlink" title="模式与简介"></a>模式与简介</h2><p>vim分为五个常用的操作模式：正常模式，插入模式。替换模式，可视化模式，命令模式。正常模式是最初的模式，也是其它模式下按下ESC返回的模式    </p>
+<p>在不同的操作模式下，键盘敲击的含义也不同    </p>
+<p>你可以按下<code>&lt;ESC&gt;</code>（退出键） 从任何其他模式返回<strong>正常模式</strong>。 在正常模式，键入<code>i</code>进入<strong>插入模式</strong>，<code>R</code>进入<strong>替换模式</strong>，<code>v</code>进入<strong>可视（一般）模式</strong>，<code>V</code>进入<strong>可视（行）模式</strong>，<code>&lt;C-v&gt; （Ctrl-V, 有时也写作 ^V）</code>进入<strong>可视（块）模式</strong>，<code>:</code> 进入<strong>命令模式</strong>   </p>
+<h3 id="概念：缓存、标签页、窗口"><a href="#概念：缓存、标签页、窗口" class="headerlink" title="概念：缓存、标签页、窗口"></a>概念：缓存、标签页、窗口</h3><p>Vim 会维护一系列打开的文件，称为“缓存”。一个 Vim 会话包含一系列标签页，每个标签页包含 一系列窗口（分隔面板）。每个窗口显示一个缓存。跟网页浏览器等其他你熟悉的程序不一样的是， 缓存和窗口不是一一对应的关系；窗口只是视角。一个缓存可以在_多个_窗口打开，甚至在同一 个标签页内的多个窗口打开。这个功能其实很好用，比如在查看同一个文件的不同部分的时候。</p>
+<p>Vim 默认打开一个标签页，这个标签也包含一个窗口。    </p>
+<h3 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h3><p>在正常模式下按下i进入插入模式，此时的vim会和传统的文本编辑器拥有一样的操作。按下ESC退出插入模式返回正常模式 </p>
+<h3 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h3><p>在正常模式下键入<code>:</code>进入命令行模式，下面列出了几个常见的命令:    </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">:q 退出窗口 </span><br><span class="line">q!:退出并且取消所有的改动   </span><br><span class="line">:w 保存（写入） </span><br><span class="line">:wq 保存并退出  </span><br><span class="line">:e &#123;文件名&#125;  打开某个你想要编辑的文件   </span><br><span class="line">:ls 显示打开的缓存  </span><br><span class="line"></span><br><span class="line">:help &#123;标题&#125; 打开某个东西的帮助文档 </span><br><span class="line">注意，help的使用是视情况而定的，比如：  </span><br><span class="line">:help :w 打开 :w 命令的帮助文档</span><br><span class="line">:help w 打开 w 移动的帮助文档</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="基础操作与基础命令"><a href="#基础操作与基础命令" class="headerlink" title="基础操作与基础命令"></a>基础操作与基础命令</h2><h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><p><strong>基本移动</strong>  </p>
+<p>基本移动：hjkl对于左下上右<br>对于词的移动：w到达下一个单词，b到达词初，e到达词尾<br>对于行的移动：0到达行初，而$到达行尾，^会到达第一个非空格字符<br>对于屏幕的移动：H到达屏幕首行，M到达屏幕中间，L到达屏幕底部<br>对于页码的移动：C-u上翻，C-d下翻<br>对于文件的移动：gg移动过至文件头,G移动至文件尾  </p>
+<p><strong>搜索移动</strong><br>行数移动：{行数}CR 或者 {行数}G<br>（CR就是回车键）    </p>
+<p>配对查找移动：使用<code>%</code>移动到对应的配对符号，比如一对括号<br>查找：f{字符},t{字符},F{字符},T{字符}；f代表查找到对应字符的位置，t则是前一个；小写代表向行尾（右）寻找，大写则是向行首（左）寻找<br><img src="https://s2.loli.net/2022/08/15/z8ewFuqOLYWt7AK.png"> </p>
+<p>搜索：<code>/&#123;正则表达式&#125;</code>进行搜索，正则表达式的相关内容见下一篇博客。n向下匹配，N向上匹配；如果想要反向搜索，则使用<code>?</code>而非<code>/</code>   </p>
+<h3 id="选择模式"><a href="#选择模式" class="headerlink" title="选择模式"></a>选择模式</h3><p>使用<code>v</code>,<code>V</code>,<code>Ctrl v</code>来进入普通可视化，行可视化，块可视化<br>普通可视化根据对光标的控制选择区域，行&#x2F;块可视化 分别对 行&#x2F;块 进行操作<br>进入选择模式&#x2F;可视化模式 之后，利用移动命令来进行区域的选定  </p>
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><p>在普通模式下按下<code>i</code>即可进入插入模式。<br>如果处于普通模式之下，还有以下的编辑操作：<br><code>O</code> &#x2F; <code>o</code> : 在上方 &#x2F; 下方 插入一个新的行<br><code>d&#123;移动命令&#125;</code>:进行删除，删除的区域由移动命令决定<br>dw:删除一个单词;d$删除光标到行尾的单词;dd删除一整行<br><code>c&#123;移动命令&#125;</code>:效果和使用同d，不过会自动进入插入模式<br><code>x</code>:删除光标所在的字符<br><code>rx</code>:替换光标处的字符<br><code>s</code>:替换字符，相当于x之后再i    </p>
+<p><code>u</code>:撤销上一步操作<br><code>U</code>:恢复对这一整行的操作<br><code>Ctrl r</code>:重做上一步操作<br><code>y</code>:进行复制<br><code>p</code>:进行粘贴<br><code>A</code>:追加文本，会在光标选择处的后方开始插入文本（常用于对一行末尾的编辑）<br>（复制的时候需要选择复制区域，粘贴则需要确定粘贴位置）  </p>
+<h3 id="多次操作"><a href="#多次操作" class="headerlink" title="多次操作"></a>多次操作</h3><p>可以使用“数字+操作”的方式，重复执行多次任务<br>3w:向前移动三个单词<br>5j:向下移动5行<br>7dw:删除7个单词 </p>
+<h3 id="修饰语"><a href="#修饰语" class="headerlink" title="修饰语"></a>修饰语</h3><p>修饰语可以改变一些名词的“意义”，修饰语有<code>i</code>表示“内部”，以及<code>a</code>表示“周围”<br>这里例举三个修饰语来展示作用    </p>
+<p>ci( 改变当 前括号内的内容<br>ci[ 改变当前 方括号内的内容<br>da’ 删除一个单引号字符串， 包括周围的单引号 </p>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>键入 CTRL-G 以显示你在文件中的位置和状态<br>CTRL-O 使你返回到以前的位置，CTRL-I 回到以后的位置  </p>
+<p>CTRL+F:往下翻页<br>CTRL+B:往上翻页 </p>
+<p>CTRL+E:往下滚动<br>CTRL+Y:往上滚动 </p>
+<p>替换:键入 :s&#x2F;old&#x2F;new&#x2F;g 以用’new’替换’old’,而g则代表对本行生效   </p>
+<p>执行外部命令:先使用<code>:</code>进入命令模式，然后键入<code>!</code>字符，这使得我们可以执行一个外部的shell命令；通过这种方式执行任何的外部命令是可能的，同样可以跟参数    </p>
+<p>保存改动:要保存对文本作的改动，键入 :w FILENAME,将文件的改动保存至”FILENAME”,如果该文件并不存在，则会新建对应的文件     </p>
+<p>恢复&#x2F;合并文件：键入<code>r FILENAME</code>会将FILENAME中的内容从光标位置开始恢复   </p>
+<p>帮助：vim拥有一个在线帮助系统，按下<code>F1/HELP</code>可以进入帮助模式，键入<code>help &lt;CR&gt;</code>也会有对应效果 </p>
+<p>-按U将选中内容变大写<br>-按u将选中内容变小写<br>-按~将大小翻转  </p>
+<h2 id="vimtutor"><a href="#vimtutor" class="headerlink" title="vimtutor"></a>vimtutor</h2><p>vimtutor 是一个 Vim 安装时自带的教程 , 里面记录了各种常见常用的操作<br>这里有一个翻译不错的中文版  <a target="_blank" rel="noopener" href="https://github.com/HanielF/VimTutor">https://github.com/HanielF/VimTutor</a>     </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">RetenQ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/08/15/MissingSemester(2)VIM%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">http://example.com/2022/08/15/MissingSemester(2)VIM%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">RetenQ的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/shell-bash/">shell,bash</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2022/08/15/YneZqjNl2MbSymc.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/08/15/MissingSemester(1)%E5%88%9D%E8%AF%86Shell%E4%BB%A5%E5%8F%8ABash/"><img class="next-cover" src="https://s2.loli.net/2022/08/15/YneZqjNl2MbSymc.jpg" onerror="onerror=null;src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MissingSemester(1):初识Shell以及Bash</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/08/15/MissingSemester(1)%E5%88%9D%E8%AF%86Shell%E4%BB%A5%E5%8F%8ABash/" title="MissingSemester(1):初识Shell以及Bash"><img class="cover" src="https://s2.loli.net/2022/08/15/YneZqjNl2MbSymc.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-15</div><div class="title">MissingSemester(1):初识Shell以及Bash</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s2.loli.net/2022/08/12/AzsRr7yUNo5Ibhg.png" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="avatar"/></div><div class="author-info__name">RetenQ</div><div class="author-info__description">于是百无聊赖中写下了答案的最后一笔</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RetenQ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com//RetenQ" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://twitter.com/RetenQ" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a><a class="social-icon" href="mailto:RetenQ@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">你好！这里是某csse菜鸡的博客，有需要的话欢迎通过QQ或者Email联系我！ 3452567280 RetenQ@outlook.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MissingSemester-2-VIM%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">MissingSemester(2)VIM基础操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F%E4%B8%8E%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">模式与简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A%E7%BC%93%E5%AD%98%E3%80%81%E6%A0%87%E7%AD%BE%E9%A1%B5%E3%80%81%E7%AA%97%E5%8F%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text">概念：缓存、标签页、窗口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.2.</span> <span class="toc-text">插入模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.3.</span> <span class="toc-text">命令行模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E4%B8%8E%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">基础操作与基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">选择模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91"><span class="toc-number">1.2.3.</span> <span class="toc-text">编辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%AC%A1%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.4.</span> <span class="toc-text">多次操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E9%A5%B0%E8%AF%AD"><span class="toc-number">1.2.5.</span> <span class="toc-text">修饰语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-number">1.2.6.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vimtutor"><span class="toc-number">1.3.</span> <span class="toc-text">vimtutor</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/15/MissingSemester(2)VIM%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" title="MissingSemester(2)VIM基础操作"><img src="https://s2.loli.net/2022/08/15/YneZqjNl2MbSymc.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="MissingSemester(2)VIM基础操作"/></a><div class="content"><a class="title" href="/2022/08/15/MissingSemester(2)VIM%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/" title="MissingSemester(2)VIM基础操作">MissingSemester(2)VIM基础操作</a><time datetime="2022-08-15T04:01:33.000Z" title="发表于 2022-08-15 12:01:33">2022-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/15/MissingSemester(1)%E5%88%9D%E8%AF%86Shell%E4%BB%A5%E5%8F%8ABash/" title="MissingSemester(1):初识Shell以及Bash"><img src="https://s2.loli.net/2022/08/15/YneZqjNl2MbSymc.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="MissingSemester(1):初识Shell以及Bash"/></a><div class="content"><a class="title" href="/2022/08/15/MissingSemester(1)%E5%88%9D%E8%AF%86Shell%E4%BB%A5%E5%8F%8ABash/" title="MissingSemester(1):初识Shell以及Bash">MissingSemester(1):初识Shell以及Bash</a><time datetime="2022-08-15T03:01:33.000Z" title="发表于 2022-08-15 11:01:33">2022-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/12/hello-world/" title="Hello World"><img src="https://s3.bmp.ovh/imgs/2022/01/17305abebdcff48f.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/08/12/hello-world/" title="Hello World">Hello World</a><time datetime="2022-08-12T08:23:28.877Z" title="发表于 2022-08-12 16:23:28">2022-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.1 树：AVL的实现与分析，高级树简介"/></a><div class="content"><a class="title" href="/2022/04/19/1.1%20%E6%A0%91%EF%BC%9AAVL%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%8C%E9%AB%98%E7%BA%A7%E6%A0%91%E7%AE%80%E4%BB%8B/" title="1.1 树：AVL的实现与分析，高级树简介">1.1 树：AVL的实现与分析，高级树简介</a><time datetime="2022-04-19T12:27:00.000Z" title="发表于 2022-04-19 20:27:00">2022-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现"><img src="https://s2.loli.net/2022/04/19/7PoksHucray2wf1.jpg" onerror="this.onerror=null;this.src='https://s2.loli.net/2022/01/13/lsqSbINmozkPFpM.png'" alt="1.0 树：树的简介，二叉树的实现"/></a><div class="content"><a class="title" href="/2022/04/19/1.0%20%E6%A0%91%EF%BC%9A%E6%A0%91%E7%9A%84%E7%AE%80%E4%BB%8B%EF%BC%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AE%9E%E7%8E%B0/" title="1.0 树：树的简介，二叉树的实现">1.0 树：树的简介，二叉树的实现</a><time datetime="2022-04-19T12:08:00.000Z" title="发表于 2022-04-19 20:08:00">2022-04-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By RetenQ</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
